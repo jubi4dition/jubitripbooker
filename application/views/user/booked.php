@@ -25,7 +25,7 @@
 			<td><?=$booked_trip->title; ?></td>
 			<td><?=$booked_trip->cost; ?>€</td>
 			<td>
-			<form class="cancelTrip" style="margin-bottom: 0;" action="<?=Url::to('user/cancel_trip'); ?>" method="post">
+			<form class="cancelTrip" style="margin-bottom: 0;">
 				<input type="hidden" name="booking_id" value="<?=$booked_trip->id ?>">
 				<button class="btn btn-small btn-danger" type="submit">Cancel</button>
 			</form>
