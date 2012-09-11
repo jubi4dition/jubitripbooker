@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JubiTripBooker</title>
+<link href="css/bootstrap.css" media="all" type="text/css" rel="stylesheet">
+<link href="css/jubitripbooker.css" media="all" type="text/css" rel="stylesheet">
+<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+	<div class="navbar">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href="index.html"><img src="img/jtb-logo.png" width="90px"/></a>
+			<ul class="nav">
+				<li class="divider-vertical"></li>
+				<li ><a href="book.html"><i class="icon-globe"></i> Book</a></li>
+				<li class="divider-vertical"></li>
+				<li ><a href="booked.html"><i class="icon-briefcase"></i> Booked</a></li>
+				<li class="divider-vertical"></li>
+			</ul>
+			<div class="pull-right">
+				<small class="navbar-text">User: <a href="profile.html">Jubi Dition</a></small>
+				<a href="login.html" class="btn btn-primary"><i class="icon-road icon-white"></i> Logout</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+<div class="content" id="content" style="display:none">
+	<div class="page-header">
+		<h1>Your JTB-Account Informations</h1>
+	</div>
+	<div class="row">
+	<div class="span10">
+		<form class="form-horizontal">
+		<div class="control-group">
+			<label class="control-label" for="firstname">Firstname</label>
+			<div class="controls">
+			<input type="text" id="firstname" value="Jubi" disabled>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="lastname">Lastname</label>
+			<div class="controls">
+			<input type="text" id="lastname" value="Dition" disabled>
+			</div>
+		</div>
+		<div class="control-group">
+			<label class="control-label" for="number">Number</label>
+			<div class="controls">
+			<input type="text" id="number" value="100003" disabled>
+			</div>
+		</div>
+		</form>
+	</div>
+	</div>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function() {
+
+	$('#content').fadeIn(1000);
+});
+</script>
+	<footer>
+		<p>&copy; 2012 built with Laravel 3.2.7 and Twitter Bootstrap 2.1.1</p>
+	</footer>
+</div><!-- /container -->
+</body>
+</html>

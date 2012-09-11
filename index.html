@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JubiTripBooker</title>
+<link href="css/bootstrap.css" media="all" type="text/css" rel="stylesheet">
+<link href="css/jubitripbooker.css" media="all" type="text/css" rel="stylesheet">
+<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+	<div class="navbar">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href="#"><img src="img/jtb-logo.png" width="90px"/></a>
+			<ul class="nav">
+				<li class="divider-vertical"></li>
+				<li ><a href="book.html"><i class="icon-globe"></i> Book</a></li>
+				<li class="divider-vertical"></li>
+				<li ><a href="booked.html"><i class="icon-briefcase"></i> Booked</a></li>
+				<li class="divider-vertical"></li>
+			</ul>
+			<div class="pull-right">
+				<small class="navbar-text">User: <a href="profile.html">Jubi Dition</a></small>
+				<a href="login.html" class="btn btn-primary"><i class="icon-road icon-white"></i> Logout</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+<div class="content" id="content" style="display:none">
+	<div class="page-header">
+		<h1>Welcome to your JTB-Account</h1>
+	</div>
+	<div class="row">
+	<div class="span10">
+		<div class="alert alert-info">
+			<a href="book.html" class="btn btn-info"><i class="icon-globe icon-white"></i> Book</a>
+			<strong>You can book your trips here</strong>		
+		</div>
+		<div class="alert alert-info">
+			<a href="booked.html" class="btn btn-info"><i class="icon-briefcase icon-white"></i> Booked</a>
+			<strong>And you can watch your booked trips here</strong>	
+		</div>
+	</div>
+	</div>
+	<div class="row">
+	<div class="span10">
+		<h3>The locations of your cruise</h3>
+		<table class="table table-bordered">
+		<thead>
+			<tr style="background-color: #D9EDF7;">
+				<th>Day</th>
+				<th>Location</th>
+			</tr>
+		</thead>
+		<tbody>
+				<tr>
+			<td>1</td>
+			<td>Hamburg</td>
+		</tr>
+				<tr>
+			<td>3</td>
+			<td>Zeebrugge</td>
+		</tr>
+				<tr>
+			<td>4</td>
+			<td>Le-Havre</td>
+		</tr>
+				<tr>
+			<td>5</td>
+			<td>Southampton</td>
+		</tr>
+				<tr>
+			<td>7</td>
+			<td>La-Coruna</td>
+		</tr>
+				<tr>
+			<td>9</td>
+			<td>Lisbon</td>
+		</tr>
+				<tr>
+			<td>10</td>
+			<td>Cadiz</td>
+		</tr>
+				<tr>
+			<td>12</td>
+			<td>Mallorca</td>
+		</tr>
+				</tbody>
+	</table>
+	</div>
+	</div>
+</div>
+<script src="js/jquery.js"></script>
+<script>
+$(document).ready(function() {
+
+	$('#content').fadeIn(1000);
+});
+</script>
+	<footer>
+		<p>&copy; 2012 built with Laravel 3.2.7 and Twitter Bootstrap 2.1.1</p>
+	</footer>
+</div><!-- /container -->
+</body>
+</html>

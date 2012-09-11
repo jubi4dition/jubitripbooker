@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JubiTripBooker</title>
+<link href="css/bootstrap.css" media="all" type="text/css" rel="stylesheet">
+<link href="css/jubitripbooker.css" media="all" type="text/css" rel="stylesheet">
+<link rel="shortcut icon" href="favicon.ico">
+</head>
+<body>
+	<div class="navbar">
+	<div class="navbar-inner">
+		<div class="container">
+			<a class="brand" href="index.html"><img src="img/jtb-logo.png" width="90px"/></a>
+			<ul class="nav">
+				<li class="divider-vertical"></li>
+				<li class="active"><a href="book.html"><i class="icon-globe"></i> Book</a></li>
+				<li class="divider-vertical"></li>
+				<li ><a href="booked.html"><i class="icon-briefcase"></i> Booked</a></li>
+				<li class="divider-vertical"></li>
+			</ul>
+			<div class="pull-right">
+				<small class="navbar-text">User: <a href="profile.html">Jubi Dition</a></small>
+				<a href="login.html" class="btn btn-primary"><i class="icon-road icon-white"></i> Logout</a>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="container">
+<div class="content" id="content" style="display:none">
+	<div class="page-header">
+		<h1>Book Your Trips</h1>
+	</div>
+		<div class="row">
+	<div class="span10">
+		<form class="bookTrip">
+		<input type="hidden" name="location" value="Hamburg">
+		<table class="table table-bordered">
+		<tbody>
+		<tr class="info">
+			<td colspan="3"><strong>Hamburg Day 1</strong></td>
+		</tr>
+		</thead>
+		<tbody>
+				<tr>
+			<td>Sightseeing of the Reeperbahn</td>
+			<td>29€</td>
+			<td><input type="radio" name="Hamburg" value="22" required></td>
+		</tr>
+				<tr>
+			<td>Harbor tour</td>
+			<td>39€</td>
+			<td><input type="radio" name="Hamburg" value="23" required></td>
+		</tr>
+				</tbody>
+		</table>
+		<div class="pull-right">
+			<button type="submit" class="btn btn-info btn-large" data-loading-text="processing...">
+			<i class="icon-ok icon-white"></i> Book it</button>
+		</div>
+		
+		<div class="alert alert-success" style="display: none; width:300px;"><strong>Successful</strong></div>
+		<div class="alert alert-error" style="display: none; width:300px;"><strong>Error</strong></div>
+		</form>	
+	</div>
+	</div>
+	<br>
+		<div class="row">
+	<div class="span10">
+		<form class="bookTrip">
+		<input type="hidden" name="location" value="Zeebrugge">
+		<table class="table table-bordered">
+		<tbody>
+		<tr class="info">
+			<td colspan="3"><strong>Zeebrugge Day 3</strong></td>
+		</tr>
+		</thead>
+		<tbody>
+				<tr>
+			<td>Brugge on foot and by boat</td>
+			<td>59€</td>
+			<td><input type="radio" name="Zeebrugge" value="1" required></td>
+		</tr>
+				<tr>
+			<td>Brugge with beer tasting</td>
+			<td>65€</td>
+			<td><input type="radio" name="Zeebrugge" value="2" required></td>
+		</tr>
+				<tr>
+			<td>With canal boat by Gent</td>
+			<td>39€</td>
+			<td><input type="radio" name="Zeebrugge" value="5" required></td>
+		</tr>
+				<tr>
+			<td>A day in the capital: Brussels</td>
+			<td>69€</td>
+			<td><input type="radio" name="Zeebrugge" value="6" required></td>
+		</tr>
+				</tbody>
+		</table>
+		<div class="pull-right">
+			<button type="submit" class="btn btn-info btn-large" data-loading-text="processing...">
+			<i class="icon-ok icon-white"></i> Book it</button>
+		</div>
+		
+		<div class="alert alert-success" style="display: none; width:300px;"><strong>Successful</strong></div>
+		<div class="alert alert-error" style="display: none; width:300px;"><strong>Error</strong></div>
+		</form>	
+	</div>
+	</div>
+	<br>
+		<div class="row">
+	<div class="span10">
+		<form class="bookTrip">
+		<input type="hidden" name="location" value="Le-Havre">
+		<table class="table table-bordered">
+		<tbody>
+		<tr class="info">
+			<td colspan="3"><strong>Le-Havre Day 4</strong></td>
+		</tr>
+		</thead>
+		<tbody>
+				<tr>
+			<td>Normandy scenic drive</td>
+			<td>49€</td>
+			<td><input type="radio" name="Le-Havre" value="3" required></td>
+		</tr>
+				<tr>
+			<td>Transfer to Paris</td>
+			<td>69€</td>
+			<td><input type="radio" name="Le-Havre" value="4" required></td>
+		</tr>
+				<tr>
+			<td>Paris Seine River Cruise</td>
+			<td>119€</td>
+			<td><input type="radio" name="Le-Havre" value="7" required></td>
+		</tr>
+				<tr>
+			<td>An afternoon in Honfleur</td>
+			<td>29€</td>
+			<td><input type="radio" name="Le-Havre" value="8" required></td>
+		</tr>
+				</tbody>
+		</table>
+		<div class="pull-right">
+			<button type="submit" class="btn btn-info btn-large" data-loading-text="processing...">
+			<i class="icon-ok icon-white"></i> Book it</button>
+		</div>
+		
+		<div class="alert alert-success" style="display: none; width:300px;"><strong>Successful</strong></div>
+		<div class="alert alert-error" style="display: none; width:300px;"><strong>Error</strong></div>
+		</form>	
+	</div>
+	</div>
+	<br>
+		<div class="row">
+	<div class="span10">
+		<form class="bookTrip">
+		<input type="hidden" name="location" value="Southampton">
+		<table class="table table-bordered">
+		<tbody>
+		<tr class="info">
+			<td colspan="3"><strong>Southampton Day 5</strong></td>
+		</tr>
+		</thead>
+		<tbody>
+				<tr>
+			<td>Stonehenge and Salisbury </td>
+			<td>55€</td>
+			<td><input type="radio" name="Southampton" value="9" required></td>
+		</tr>
+				<tr>
+			<td>Windsor Castle</td>
+			<td>75€</td>
+			<td><input type="radio" name="Southampton" value="10" required></td>
+		</tr>
+				<tr>
+			<td>Tower of London, Covent Garden and Harrods  </td>
+			<td>85€</td>
+			<td><input type="radio" name="Southampton" value="11" required></td>
+		</tr>
+				<tr>
+			<td>Visit to Buckingham Palace</td>
+			<td>89€</td>
+			<td><input type="radio" name="Southampton" value="12" required></td>
+		</tr>
+				</tbody>
+		</table>
+		<div class="pull-right">
+			<button type="submit" class="btn btn-info btn-large" data-loading-text="processing...">
+			<i class="icon-ok icon-white"></i> Book it</button>
+		</div>
+		
+		<div class="alert alert-success" style="display: none; width:300px;"><strong>Successful</strong></div>
+		<div class="alert alert-error" style="display: none; width:300px;"><strong>Error</strong></div>
+		</form>	
+	</div>
+	</div>
+	<br>
+		<div class="row">
+	<div class="span10">
+		<form class="bookTrip">
+		<input type="hidden" name="location" value="La-Coruna">
+		<table class="table table-bordered">
+		<tbody>
+		<tr class="info">
+			<td colspan="3"><strong>La-Coruna Day 7</strong></td>
+		</tr>
+		</thead>
+		<tbody>
+				<tr>
+			<td>Sightseeing</td>
+			<td>49€</td>
+			<td><input type="radio" name="La-Coruna" value="13" required></td>
+		</tr>
+				<tr>
+			<td>Santiago de Compostela </td>
+			<td>55€</td>
+			<td><input type="radio" name="La-Coruna" value="14" required></td>
+		</tr>
+				<tr>
+			<td>Santiago from the sky</td>
+			<td>99€</td>
+			<td><input type="radio" name="La-Coruna" value="15" required></td>
+		</tr>
+				<tr>
+			<td>The Road to Santiago</td>
+			<td>75€</td>
+			<td><input type="radio" name="La-Coruna" value="16" required></td>
+		</tr>
+				</tbody>
+		</table>
+		<div class="pull-right">
+			<button type="submit" class="btn btn-info btn-large" data-loading-text="processing...">
+			<i class="icon-ok icon-white"></i> Book it</button>
+		</div>
+		
+		<div class="alert alert-success" style="display: none; width:300px;"><strong>Successful</strong></div>
+		<div class="alert alert-error" style="display: none; width:300px;"><strong>Error</strong></div>
+		</form>	
+	</div>
+	</div>
+	<br>
+		<div class="row">
+	<div class="span10">
+		<form class="bookTrip">
+		<input type="hidden" name="location" value="Lisbon">
+		<table class="table table-bordered">
+		<tbody>
+		<tr class="info">
+			<td colspan="3"><strong>Lisbon Day 9</strong></td>
+		</tr>
+		</thead>
+		<tbody>
+				<tr>
+			<td>Lisbon highlights and visit the Oceanarium</td>
+			<td>49€</td>
+			<td><input type="radio" name="Lisbon" value="17" required></td>
+		</tr>
+				<tr>
+			<td>Panoramic tour by bus and boat</td>
+			<td>69€</td>
+			<td><input type="radio" name="Lisbon" value="18" required></td>
+		</tr>
+				<tr>
+			<td>Jeep tour and wine tasting</td>
+			<td>79€</td>
+			<td><input type="radio" name="Lisbon" value="19" required></td>
+		</tr>
+				<tr>
+			<td>Traditional Fado evening</td>
+			<td>89€</td>
+			<td><input type="radio" name="Lisbon" value="21" required></td>
+		</tr>
+				</tbody>
+		</table>
+		<div class="pull-right">
+			<button type="submit" class="btn btn-info btn-large" data-loading-text="processing...">
+			<i class="icon-ok icon-white"></i> Book it</button>
+		</div>
+		
+		<div class="alert alert-success" style="display: none; width:300px;"><strong>Successful</strong></div>
+		<div class="alert alert-error" style="display: none; width:300px;"><strong>Error</strong></div>
+		</form>	
+	</div>
+	</div>
+	<br>
+		<div class="row">
+	<div class="span10">
+		<form class="bookTrip">
+		<input type="hidden" name="location" value="Cadiz">
+		<table class="table table-bordered">
+		<tbody>
+		<tr class="info">
+			<td colspan="3"><strong>Cadiz Day 10</strong></td>
+		</tr>
+		</thead>
+		<tbody>
+				<tr>
+			<td>Panoramic tour of Cadiz</td>
+			<td>39€</td>
+			<td><input type="radio" name="Cadiz" value="24" required></td>
+		</tr>
+				<tr>
+			<td>Rapid Quad Tour</td>
+			<td>69€</td>
+			<td><input type="radio" name="Cadiz" value="25" required></td>
+		</tr>
+				<tr>
+			<td>The Rock of Gibraltar</td>
+			<td>69€</td>
+			<td><input type="radio" name="Cadiz" value="26" required></td>
+		</tr>
+				<tr>
+			<td>Trekking in the Natural Park of La Brena</td>
+			<td>55€</td>
+			<td><input type="radio" name="Cadiz" value="27" required></td>
+		</tr>
+				</tbody>
+		</table>
+		<div class="pull-right">
+			<button type="submit" class="btn btn-info btn-large" data-loading-text="processing...">
+			<i class="icon-ok icon-white"></i> Book it</button>
+		</div>
+		
+		<div class="alert alert-success" style="display: none; width:300px;"><strong>Successful</strong></div>
+		<div class="alert alert-error" style="display: none; width:300px;"><strong>Error</strong></div>
+		</form>	
+	</div>
+	</div>
+	<br>
+		<div class="row">
+	<div class="span10">
+		<form class="bookTrip">
+		<input type="hidden" name="location" value="Mallorca">
+		<table class="table table-bordered">
+		<tbody>
+		<tr class="info">
+			<td colspan="3"><strong>Mallorca Day 12</strong></td>
+		</tr>
+		</thead>
+		<tbody>
+				<tr>
+			<td>Beach tour</td>
+			<td>29€</td>
+			<td><input type="radio" name="Mallorca" value="28" required></td>
+		</tr>
+				<tr>
+			<td>Sightseeing tour</td>
+			<td>49€</td>
+			<td><input type="radio" name="Mallorca" value="29" required></td>
+		</tr>
+				</tbody>
+		</table>
+		<div class="pull-right">
+			<button type="submit" class="btn btn-info btn-large" data-loading-text="processing...">
+			<i class="icon-ok icon-white"></i> Book it</button>
+		</div>
+		
+		<div class="alert alert-success" style="display: none; width:300px;"><strong>Successful</strong></div>
+		<div class="alert alert-error" style="display: none; width:300px;"><strong>Error</strong></div>
+		</form>	
+	</div>
+	</div>
+	<br>
+	</div>
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap-button.js"></script>
+<script>
+$(document).ready(function() {
+
+	$('.bookTrip').submit(function(){
+			
+		return false;
+	});
+
+	$('#content').fadeIn(1000);
+});
+</script>
+	<footer>
+		<p>&copy; 2012 built with Laravel 3.2.7 and Twitter Bootstrap 2.1.1</p>
+	</footer>
+</div><!-- /container -->
+</body>
+</html>
