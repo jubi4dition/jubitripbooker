@@ -8,7 +8,7 @@ Current Version: **1.0.0**
 Usage
 -----
 
-Using Laravel Contacts requires the following steps.
+Using JubiTripBooker requires the following steps.
 
 * Copy the laravelcontacts folder to your webroot
 * Import jubitripbooker.sql to your database (jubitripbooker)
