@@ -10,16 +10,16 @@ class User_Controller extends Base_Controller {
 
     public function action_index()
     {
-        $locations = Locations::get_locations();
+        $locations = Locations::getAll();
         return View::make('user.index')->with('locations', $locations);
     }
 
     public function action_book()
     {
-        $locations = Locations::get_locations();
+        $locations = Locations::getAll();
 
         foreach ($locations as $location) {
-            $trips[$location->name] = Trips::get_trips($location->id);
+            $trips[$location->name] = Trips::get($location->id);
         }
         
         return View::make('user.book')
@@ -33,7 +33,7 @@ class User_Controller extends Base_Controller {
         $trip_id = Input::get($location);
         $user_id = Session::get('uid');
 
-        $booked = Bookings::book_trip($user_id, $trip_id);
+        $booked = Bookings::book($user_id, $trip_id);
         
         if ($booked) {
             return Response::json(array('success' => true));
@@ -62,7 +62,7 @@ class User_Controller extends Base_Controller {
 
     public function action_booked()
     { 
-        $booked_trips = Bookings::get_trips(Session::get('uid'));
+        $booked_trips = Bookings::get(Session::get('uid'));
         return View::make('user.booked')->with('booked_trips', $booked_trips);
     }
 
