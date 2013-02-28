@@ -17,6 +17,7 @@ class User_Controller extends Base_Controller {
     public function action_book()
     {
         $locations = Locations::get_locations();
+
         foreach ($locations as $location) {
             $trips[$location->name] = Trips::get_trips($location->id);
         }
@@ -28,12 +29,12 @@ class User_Controller extends Base_Controller {
 
     public function action_book_trip()
     {
-        sleep(1);
         $location = Input::get('location');
         $trip_id = Input::get($location);
         $user_id = Session::get('uid');
 
         $booked = Bookings::book_trip($user_id, $trip_id);
+        
         if ($booked) {
             return Response::json(array('success' => true));
         } else {
@@ -43,14 +44,15 @@ class User_Controller extends Base_Controller {
 
     public function action_cancel_trip()
     {
-        sleep(1);
         $validation = Validator::make(Input::all(), array('booking_id' => 'required|integer'));
+        
         if ($validation->fails()) {
             return Response::json(array('success' => false));
         } 
 
         $booking_id = Input::get('booking_id');
         $deleted = Bookings::delete($booking_id);
+        
         if ($deleted) {
             return Response::json(array('success' => true));
         } else {
@@ -59,8 +61,7 @@ class User_Controller extends Base_Controller {
     }
 
     public function action_booked()
-    {
-        
+    { 
         $booked_trips = Bookings::get_trips(Session::get('uid'));
         return View::make('user.booked')->with('booked_trips', $booked_trips);
     }
