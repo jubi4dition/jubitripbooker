@@ -21,7 +21,7 @@
       </div>
   </div>
   </div>
-  <? if ($error == TRUE): ?>
+  <? if (isset($error)): ?>
   <div class="row">
   <div class="span4">
     <div class="alert alert-error">

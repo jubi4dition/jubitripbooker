@@ -7,7 +7,7 @@ class Login_Controller extends Base_Controller {
         if (Session::get('logged_in') == true) {
             return Redirect::to('user');
         } else {
-            return View::make('login.index')->with('error', false);
+            return View::make('login.index');
         }
     }
 
@@ -46,7 +46,7 @@ class Login_Controller extends Base_Controller {
     public function action_logout()
     {
         Session::flush();
-        return View::make('login.index')->with('error', false);
+        return View::make('login.index');
     }
     
 }
