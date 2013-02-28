@@ -73,7 +73,7 @@ class User_Controller extends Base_Controller {
 
 	public function action_profile()
 	{
-		$user = Users::get_user_data(Session::get('uid'));
+		$user = Users::getUserData(Session::get('uid'));
 		return View::make('user.profile')->with('user', $user);
 	}
 

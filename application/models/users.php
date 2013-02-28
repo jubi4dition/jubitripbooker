@@ -11,9 +11,9 @@ class Users {
             ->first();
     }
 
-    public static function get_user_data($uid)
+    public static function getUserData($id)
     {
-        return DB::table('users')->where_id($uid)->first();
+        return DB::table('users')->where_id($id)->first();
     }
     
 }
