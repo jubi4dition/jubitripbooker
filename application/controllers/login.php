@@ -4,10 +4,10 @@ class Login_Controller extends Base_Controller {
 
     public function action_index()
     {
-        if (Session::get('logged_in') == TRUE) {
+        if (Session::get('logged_in') == true) {
             return Redirect::to('user');
         } else {
-            return View::make('login.index')->with('error', FALSE);
+            return View::make('login.index')->with('error', false);
         }
     }
 
@@ -31,7 +31,7 @@ class Login_Controller extends Base_Controller {
             $name = $user->firstname." ".$user->lastname;
             Session::put('uid', $user->id);
             Session::put('name', $name);
-            Session::put('logged_in', TRUE);
+            Session::put('logged_in', true);
             return Redirect::to('user');
         } else {
             return Redirect::to('login/error');
@@ -40,13 +40,13 @@ class Login_Controller extends Base_Controller {
 
     public function action_error()
     {
-        return View::make('login.index')->with('error', TRUE);
+        return View::make('login.index')->with('error', true);
     }
 
     public function action_logout()
     {
         Session::flush();
-        return View::make('login.index')->with('error', FALSE);
+        return View::make('login.index')->with('error', false);
     }
     
 }
