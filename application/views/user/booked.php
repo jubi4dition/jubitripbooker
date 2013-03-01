@@ -3,10 +3,10 @@
 <div class="container">
 <div class="content" id="content" style="display:none">
 	<div class="page-header">
-		<h1>Your booked Trips</h1>
+		<h2>Your booked Trips</h2>
 	</div>
 	<div class="row">
-	<div class="span10">
+	<div class="span9 offset1">
 		<table class="table table-bordered">
 		<thead>
 			<tr style="background-color: #D9EDF7;">

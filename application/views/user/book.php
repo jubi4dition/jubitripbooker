@@ -3,11 +3,11 @@
 <div class="container">
 <div class="content" id="content" style="display:none">
 	<div class="page-header">
-		<h1>Book Your Trips</h1>
+		<h2>Book Your Trips</h2>
 	</div>
 	<? foreach ($locations as $location): ?>
 	<div class="row">
-	<div class="span10">
+	<div class="span9 offset1">
 		<form class="bookTrip">
 		<input type="hidden" name="location" value="<?=$location->name; ?>">
 		<table class="table table-bordered">

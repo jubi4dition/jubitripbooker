@@ -3,10 +3,10 @@
 <div class="container">
 <div class="content" id="content" style="display:none">
 	<div class="page-header">
-		<h1>Your JTB-Account Informations</h1>
+		<h2>Your JTB-Account Informations</h2>
 	</div>
 	<div class="row">
-	<div class="span10">
+	<div class="span9 offset1">
 		<form class="form-horizontal">
 		<div class="control-group">
 			<label class="control-label" for="firstname">Firstname</label>
