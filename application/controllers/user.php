@@ -11,6 +11,7 @@ class User_Controller extends Base_Controller {
     public function action_index()
     {
         $locations = Locations::getAll();
+
         return View::make('user.index')->with('locations', $locations);
     }
 
@@ -30,10 +31,10 @@ class User_Controller extends Base_Controller {
     public function action_book_trip()
     {
         $location = Input::get('location');
-        $trip_id = Input::get($location);
-        $user_id = Session::get('uid');
+        $tripID = Input::get($location);
+        $userID = Session::get('uid');
 
-        $booked = Bookings::book($user_id, $trip_id);
+        $booked = Bookings::book($userID, $tripID);
         
         if ($booked) {
             return Response::json(array('success' => true));
@@ -50,8 +51,8 @@ class User_Controller extends Base_Controller {
             return Response::json(array('success' => false));
         } 
 
-        $booking_id = Input::get('booking_id');
-        $deleted = Bookings::delete($booking_id);
+        $bookingID = Input::get('booking_id');
+        $deleted = Bookings::delete($bookingID);
         
         if ($deleted) {
             return Response::json(array('success' => true));
@@ -62,13 +63,15 @@ class User_Controller extends Base_Controller {
 
     public function action_booked()
     { 
-        $booked_trips = Bookings::get(Session::get('uid'));
-        return View::make('user.booked')->with('booked_trips', $booked_trips);
+        $bookedTrips = Bookings::get(Session::get('uid'));
+
+        return View::make('user.booked')->with('booked_trips', $bookedTrips);
     }
 
     public function action_profile()
     {
         $user = Users::getUserData(Session::get('uid'));
+
         return View::make('user.profile')->with('user', $user);
     }
 
