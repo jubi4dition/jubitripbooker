@@ -4,9 +4,9 @@
       <a class="brand" href="<?=URL::to('user'); ?>"><img src="<?=URL::to_asset('img/jtb-logo.png'); ?>" width="90px"/></a>
       <ul class="nav">
         <li class="divider-vertical"></li>
-        <li <? if ($active == "book") echo "class=\"active\"" ?>><a href="<?=URL::to('user/book'); ?>"><i class="icon-globe"></i> Book</a></li>
+        <li id="nav-book"><a href="<?=URL::to('user/book'); ?>"><i class="icon-globe"></i> Book</a></li>
         <li class="divider-vertical"></li>
-        <li <? if ($active == "booked") echo "class=\"active\"" ?>><a href="<?=URL::to('user/booked'); ?>"><i class="icon-briefcase"></i> Booked</a></li>
+        <li id="nav-booked"><a href="<?=URL::to('user/booked'); ?>"><i class="icon-briefcase"></i> Booked</a></li>
         <li class="divider-vertical"></li>
       </ul>
       <div class="pull-right">

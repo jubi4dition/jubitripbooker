@@ -1,5 +1,5 @@
 <?=render('includes.header'); ?>
-<?=render('includes.navbar', array('active' => 'book')); ?>
+<?=render('includes.navbar'); ?>
 <div class="container">
 <div class="content" id="content" style="display:none">
 	<div class="page-header">
@@ -71,6 +71,8 @@ $(document).ready(function() {
 			
 		return false;
 	});
+
+	$('#nav-book').addClass('active');
 
 	$('#content').fadeIn(1000);
 });
