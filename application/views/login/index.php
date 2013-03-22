@@ -1,5 +1,5 @@
-<?=render('includes.header'); ?>
-<?=render('includes.nli_navbar'); ?>
+<?=render('includes.header_admin'); ?>
+<?=render('includes.navbar_login'); ?>
 <div class="container">
 <div class="content" id="content" style="display:none">
   <div class="page-header">

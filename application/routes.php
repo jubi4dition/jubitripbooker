@@ -2,6 +2,7 @@
 
 Route::controller('user');
 Route::controller('login');
+Route::controller('admin');
 
 Route::get('/', function()
 {
@@ -45,14 +46,12 @@ Route::filter('csrf', function()
 	if (Request::forged()) return Response::error('500');
 });
 
-Route::filter('auth', function()
+Route::filter('authAdmin', function()
 {
-	if (Auth::guest()) return Redirect::to('login');
+	if (Auth::guest()) return Redirect::to('admin/login');
 });
 
 Route::filter('logged_in', function()
 {
-	if (Session::get('logged_in') == FALSE) {
-		return Redirect::to('login');
-	}
+	if (Session::get('logged_in') == FALSE) return Redirect::to('login');
 });

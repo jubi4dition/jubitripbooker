@@ -5,9 +5,9 @@
       <a class="brand" href="<?=URL::to('user'); ?>">JTB</a>
       <ul class="nav">
         <li class="divider-vertical"></li>
-        <li id="nav-book"><a href="<?=URL::to('user/book'); ?>"><i class="icon-globe"></i> Book</a></li>
+        <li id="nav-book"><a href="<?=URL::to('user/book'); ?>"><i class="icon-globe icon-white"></i> Book</a></li>
         <li class="divider-vertical"></li>
-        <li id="nav-booked"><a href="<?=URL::to('user/booked'); ?>"><i class="icon-briefcase"></i> Booked</a></li>
+        <li id="nav-booked"><a href="<?=URL::to('user/booked'); ?>"><i class="icon-briefcase icon-white"></i> Booked</a></li>
         <li class="divider-vertical"></li>
       </ul>
       <div class="pull-right">

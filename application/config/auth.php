@@ -16,7 +16,7 @@ return array(
 	|
 	*/
 
-	'driver' => 'eloquent',
+	'driver' => 'fluent',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -29,7 +29,7 @@ return array(
 	|
 	*/
 
-	'username' => 'email',
+	'username' => 'name',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -68,6 +68,6 @@ return array(
 	|
 	*/
 
-	'table' => 'users',
+	'table' => 'administrators',
 
 );

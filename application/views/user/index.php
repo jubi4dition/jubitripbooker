@@ -1,5 +1,5 @@
 <?=render('includes.header'); ?>
-<?=render('includes.navbar', array('active' => 'no')); ?>
+<?=render('includes.navbar'); ?>
 <div class="container">
 <div class="content" id="content" style="display:none">
 	<div class="page-header">
