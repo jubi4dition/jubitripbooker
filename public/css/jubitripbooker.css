@@ -1,28 +1,33 @@
 /* Override some defaults */
 html,body {
-	background-image: url("../img/bgimg.png");
+	background-image: url("../img/bg.png");
+  /*background-color: #1BA1E2;*/
 }
 body {
 	overflow-y: scroll; /* force vertical scrollbar */
 }
 .container>footer p {
 	text-align: center; /* center align it with the container */
-}
-.container {
-	/*width: 820px;*/ /* downsize our container*/
+  color: #FFFFFF;
 }
 .content { /* The white background content wrapper */
 	background-color: #fff;
 	padding: 20px;
-	margin: 0 0px 15px;
-	border-radius: 0 0 6px 6px;
-	border: 1px solid #ddd;
+	margin: 0px 0px 15px;
+	border-radius: 0px 0px 6px 6px;
+	border: 1px solid #1B3E53;
+  border-top-width: 0px; 
 }
 .page-header { /* Page header tweaks */
 	background-color: #f5f5f5;
+  color: #666666;
 	padding: 1px 20px 1px;
 	margin: -20px -20px 20px;
 	border-bottom: 1px solid #ddd;
+}
+.page-header h2 {
+  font-size: 30px;
+  margin: 5px 0;
 }
 .content {
 	min-height: 350px; /* minimum height for the content */
@@ -33,25 +38,78 @@ body {
 .btn {
 	font-weight: bold; /* All buttons bold */
 }
-.navbar .brand {
-	padding: 4px 20px 4px;	/* Smaller and centering Padding */ 
-}
-.navbar { 
+/*.navbar { 
 	margin-bottom: 0;
-}
-.navbar .divider-vertical {
-	margin: 0;
-}
-.navbar .nav > li > a {
-	width: 100px;
-	text-align: center;
-}
-.navbar .container {
-	/*width: 820px;*/
-}
+}*/
 .input-prepend, .input-append {
   	margin-bottom: 15px;
 }
 .input-prepend .add-on {
 	color: #999;
+}
+.navbar-inner {
+  min-height: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  background-color: #327199;
+  background-image: -moz-linear-gradient(top, #377ca8, #2a6082);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#377ca8), to(#2a6082));
+  background-image: -webkit-linear-gradient(top, #377ca8, #2a6082);
+  background-image: -o-linear-gradient(top, #377ca8, #2a6082);
+  background-image: linear-gradient(to bottom, #377ca8, #2a6082);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff377ca8', endColorstr='#ff2a6082', GradientType=0);
+  border: 1px solid #1b3e53;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+  *zoom: 1;
+}
+.noisy {
+  background: url(../img/noisy.png) left top repeat;
+}
+.navbar .brand {
+  /*padding: 4px 20px 4px;  Smaller and centering Padding */
+  color: #FFFFFF;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0px;
+  margin-right: 10px;
+  padding: 2px;
+  text-shadow: none;
+}
+.navbar-text {
+  color: #FFFFFF;
+}
+.navbar .divider-vertical {
+  margin: 0px;
+}
+.navbar .nav > li > a {
+  width: 100px;
+  text-align: center;
+}
+.navbar .divider-vertical { 
+  border-left: 1px solid #327199;
+  border-right: 1px solid #327199;
+}
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus { 
+  background-color: #327199;
+  color: #FFFFFF;
+}
+.navbar .nav > li > a {
+  color: #DDDDDD;
+  text-shadow: none;
+}
+.navbar .nav > li > a:focus, .navbar .nav > li > a:hover {
+  color: #FFFFFF;
+}
+.navbar-text > a {
+  color: #DDDDDD;
+}
+.navbar-text > a:hover {
+  color: #DDDDDD;
 }
