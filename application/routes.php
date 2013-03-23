@@ -2,6 +2,7 @@
 
 Route::controller('user');
 Route::controller('login');
+Route::controller('admin.users');
 Route::controller('admin');
 
 Route::get('/', function()

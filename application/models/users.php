@@ -11,9 +11,20 @@ class Users {
             ->first();
     }
 
+    public static function getAll()
+    {
+        return DB::table('users')->get();
+    }
+
     public static function getUserData($id)
     {
         return DB::table('users')->where_id($id)->first();
+    }
+
+    public static function insert($firstname, $lastname, $number)
+    {
+        return DB::table('users')->insert(array(
+            'firstname' => $firstname, 'lastname' => $lastname, 'number' => $number));
     }
     
 }

@@ -39,6 +39,8 @@
 	<br>
 	<? endforeach; ?>
 </div>
+<?=render('includes.footer'); ?>
+</div>
 <?=HTML::script('js/jquery.js'); ?>
 <?=HTML::script('js/bootstrap-button.js'); ?>
 <script>
@@ -77,4 +79,5 @@ $(document).ready(function() {
 	$('#content').fadeIn(1000);
 });
 </script>
-<?=render('includes.footer'); ?>
+</body>
+</html>
