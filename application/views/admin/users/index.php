@@ -5,7 +5,7 @@
   <div class="page-header">
     <h2>Users</h2>
   </div>
-  <div class="row text-center">
+  <div class="row">
   <div class="span2 offset1">
     <a href="<?=URL::to('admin/users/show'); ?>" class="btn btn-primary btn-block">Show</a>
   </div>

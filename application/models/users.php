@@ -18,6 +18,13 @@ class Users {
             ->first();
     }
 
+    public static function hasNumber($number)
+    {
+        $user = self::getByNumber($number);
+
+        return ($user != null) ? true : false;
+    }
+
     public static function getAll()
     {
         return DB::table('users')->get();

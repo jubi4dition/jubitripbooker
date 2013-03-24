@@ -43,12 +43,18 @@ class Admin_Users_Controller extends Base_Controller {
         $validation = Validator::make(Input::get(), $rules);
         
         if ($validation->fails()) {
-            return Redirect::to('admin/users/add');
+            $message = "Invalid input!";
+            return Helper::json(false, $message);
+        }
+
+        if (Users::hasNumber(Input::get('number'))) {
+            $message = "Number already in use!";
+            return Helper::json(false, $message);
         }
 
         Users::insert(Input::get('firstname'), Input::get('lastname'), Input::get('number'));
 
-        return Redirect::to('admin/users');
+        return Response::json(array('success' => true));
     }
 
     public function get_search()
@@ -60,9 +66,7 @@ class Admin_Users_Controller extends Base_Controller {
     {
         $validation = Validator::make(Input::get(), array('number' => 'required|integer'));
         
-        if ($validation->fails()) {
-            return Redirect::to('admin/users/delete');
-        }
+        if ($validation->fails()) return Response::json(array('success' => false));
 
         $user = Users::getByNumber(Input::get('number'));
 
@@ -79,41 +83,12 @@ class Admin_Users_Controller extends Base_Controller {
         return Response::json($data);
     }
 
-    /*public function get_edit($userID)
-    {
-        $user = Users::get($userID);
-
-        if ($user != null) {
-            return View::make('admin/users.edit')
-                ->with('user', $user);
-        } else {
-            return "Error";
-        }
-    }
-
-    public function post_edit($userID)
-    {
-        $validation = Validator::make(Input::get(), array('newUserPassword' => 'required|max:60'));
-        
-        if ($validation->fails()) {
-            return Redirect::to('admin/users');
-        }
-
-        Users::password($userID, Input::get('newUserPassword'));
-
-        return Redirect::to('admin/users');
-    }*/
-
     public function get_delete()
     {
         $users = Users::getAll();
 
-        if (count($users) > 0) {
-            return View::make('admin/users.delete')
-                ->with('users', $users);
-        } else {
-            return "Error";
-        } 
+        return View::make('admin/users.delete')
+            ->with('users', $users);
     }
 
     public function post_delete()
