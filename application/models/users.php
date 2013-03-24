@@ -26,5 +26,10 @@ class Users {
         return DB::table('users')->insert(array(
             'firstname' => $firstname, 'lastname' => $lastname, 'number' => $number));
     }
+
+    public static function delete($id)
+    {
+        return DB::table('users')->where_id($id)->delete();
+    }
     
 }

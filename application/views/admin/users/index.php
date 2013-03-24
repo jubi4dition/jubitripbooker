@@ -5,24 +5,18 @@
   <div class="page-header">
     <h2>Users</h2>
   </div>
-  <div class="row">
-  <div class="span11">
-  <table class="table">
-  <thead>
-    <tr>
-      <th>Number</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
-    </tr>
-  </thead>
-  <? foreach ($users as $user): ?>
-  <tr>
-    <td><?=$user->number; ?></td>
-    <td><?=$user->firstname; ?></td>
-    <td><?=$user->lastname; ?></td>
-  </tr>
-  <? endforeach; ?>
-  </table>
+  <div class="row text-center">
+  <div class="span2 offset1">
+    <a href="<?=URL::to('admin/users/show'); ?>" class="btn btn-primary btn-block">Show</a>
+  </div>
+  <div class="span2">
+    <a href="<?=URL::to('admin/users/add'); ?>" class="btn btn-success btn-block">Add</a>
+  </div>
+  <div class="span2">
+    <a href="<?=URL::to('admin/users/search'); ?>" class="btn btn-warning btn-block">Search</a>
+  </div>
+  <div class="span2">
+    <a href="<?=URL::to('admin/users/delete'); ?>" class="btn btn-danger btn-block">Delete</a>
   </div>
   </div>
 </div>
@@ -31,6 +25,8 @@
 <?=HTML::script('js/jquery.js'); ?>
 <script>
 $(document).ready(function() {
+
+  $('#content .btn').css('padding', '40px 0px');
   
   $('#content').fadeIn(1000);
   

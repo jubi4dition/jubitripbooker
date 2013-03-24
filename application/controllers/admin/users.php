@@ -23,7 +23,7 @@ class Admin_Users_Controller extends Base_Controller {
     {
         $users = Users::getAll();
         
-        return View::make('admin/users.index')
+        return View::make('admin/users.show')
             ->with('users', $users);
     }
 
@@ -74,25 +74,31 @@ class Admin_Users_Controller extends Base_Controller {
         Users::password($userID, Input::get('newUserPassword'));
 
         return Redirect::to('admin/users');
-    }
+    }*/
 
-    public function get_delete($userID)
+    public function get_delete()
     {
-        $user = Users::get($userID);
+        $users = Users::getAll();
 
-        if ($user != null) {
+        if (count($users) > 0) {
             return View::make('admin/users.delete')
-                ->with('user', $user);
+                ->with('users', $users);
         } else {
             return "Error";
         } 
     }
 
-    public function post_delete($userID)
+    public function post_delete()
     {
-        Users::delete($userID);
+        $validation = Validator::make(Input::get(), array('userID' => 'required|integer'));
+        
+        if ($validation->fails()) {
+            return Redirect::to('admin/users/delete');
+        }
 
-        return Redirect::to('admin/users');
-    }*/
+        Users::delete(Input::get('userID'));
+
+        return Redirect::to('admin/users/');
+    }
 
 }
