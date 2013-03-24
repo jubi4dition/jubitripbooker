@@ -11,6 +11,13 @@ class Users {
             ->first();
     }
 
+    public static function getByNumber($number)
+    {
+        return DB::table('users')
+            ->where('number', '=', $number)
+            ->first();
+    }
+
     public static function getAll()
     {
         return DB::table('users')->get();

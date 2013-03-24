@@ -10,7 +10,7 @@
     <form id="formAdd" action="<?=URL::to('admin/users/add'); ?>" method="post" class="well" accept-charset="utf-8">
       <input type="text" name="firstname" class="input-block-level" placeholder="Firstname" required maxlength="60" autofocus>
       <input type="text" name="lastname" class="input-block-level" placeholder="Lastname" required maxlength="60">
-       <input type="text" name="number" class="input-block-level" placeholder="Number" required maxlength="6">
+      <input type="text" name="number" class="input-block-level" placeholder="Number" required maxlength="6">
       <button type="submit" class="btn btn-success btn-large">
       <i class="icon-plus icon-white"></i> Add User</button>
     </form>
