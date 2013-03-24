@@ -15,7 +15,7 @@
       <th>Lastname</th>
     </tr>
   </thead>
-  <? foreach ($users as $user): ?>
+  <? foreach ($users->results as $user): ?>
   <tr>
     <td><?=$user->number; ?></td>
     <td><?=$user->firstname; ?></td>
@@ -23,6 +23,11 @@
   </tr>
   <? endforeach; ?>
   </table>
+  </div>
+  </div>
+  <div class="row">
+  <div class="span5 offset3">
+    <?=$users->links(); ?>
   </div>
   </div>
 </div>

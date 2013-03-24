@@ -21,7 +21,7 @@ class Admin_Users_Controller extends Base_Controller {
 
     public function get_show()
     {
-        $users = Users::getAll();
+        $users = DB::table('users')->paginate(3);
         
         return View::make('admin/users.show')
             ->with('users', $users);
