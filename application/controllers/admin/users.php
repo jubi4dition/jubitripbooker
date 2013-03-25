@@ -13,15 +13,12 @@ class Admin_Users_Controller extends Base_Controller {
 
     public function get_index()
     {
-        $users = Users::getAll();
-        
-        return View::make('admin/users.index')
-            ->with('users', $users);
+        return View::make('admin/users.index');
     }
 
     public function get_show()
     {
-        $users = DB::table('users')->paginate(3);
+        $users = DB::table('users')->paginate(25);
         
         return View::make('admin/users.show')
             ->with('users', $users);

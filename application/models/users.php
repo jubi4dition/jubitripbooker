@@ -45,5 +45,12 @@ class Users {
     {
         return DB::table('users')->where_id($id)->delete();
     }
+
+    public static function deleteByNumber($number)
+    {
+        return DB::table('users')
+            ->where('number', '=', $number)
+            ->delete();
+    }
     
 }
