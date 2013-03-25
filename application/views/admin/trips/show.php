@@ -3,31 +3,30 @@
 <div class="container">
 <div class="content" id="content" style="display:none">
   <div class="page-header">
-    <h2>All Users</h2>
+    <h2>Trips All</h2>
   </div>
   <div class="row">
   <div class="span11">
   <table class="table table-striped">
   <thead>
     <tr>
-      <th>Number</th>
-      <th>Firstname</th>
-      <th>Lastname</th>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Cost</th>
+      <th>Location</th>
+      <th>Day</th>
     </tr>
   </thead>
-  <? foreach ($users->results as $user): ?>
+  <? foreach ($trips as $trip): ?>
   <tr>
-    <td><?=$user->number; ?></td>
-    <td><?=$user->firstname; ?></td>
-    <td><?=$user->lastname; ?></td>
+    <td><?=$trip->id; ?></td>
+    <td><?=$trip->title; ?></td>
+    <td><?=$trip->cost; ?>€</td>
+    <td><?=$trip->name; ?></td>
+    <td><?=$trip->day; ?></td>
   </tr>
   <? endforeach; ?>
   </table>
-  </div>
-  </div>
-  <div class="row">
-  <div class="span5 offset3">
-    <?=$users->links(); ?>
   </div>
   </div>
 </div>
