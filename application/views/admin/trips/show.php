@@ -10,7 +10,7 @@
   <table class="table table-striped">
   <thead>
     <tr>
-      <th>ID</th>
+      <th>Number</th>
       <th>Title</th>
       <th>Cost</th>
       <th>Location</th>
@@ -19,7 +19,7 @@
   </thead>
   <? foreach ($trips as $trip): ?>
   <tr>
-    <td><?=$trip->id; ?></td>
+    <td><?=$trip->number; ?></td>
     <td><?=$trip->title; ?></td>
     <td><?=$trip->cost; ?>€</td>
     <td><?=$trip->name; ?></td>

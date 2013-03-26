@@ -19,5 +19,17 @@ class Users_Task {
             Users::deleteByNumber($number);
         }
     }
- 
+
+    public function number($arguments)
+    {
+        $i = 100;
+
+        $trips = DB::table('trips')->get();
+
+        foreach ($trips as $trip) {
+            DB::table('trips')->where('id', '=', $trip->id)->update(array('number' => $i));
+
+            $i++;
+        }
+    }
 }

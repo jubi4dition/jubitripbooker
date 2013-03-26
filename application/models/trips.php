@@ -11,7 +11,7 @@ class Trips {
     {
         return DB::table('trips')
             ->left_join('locations', 'trips.lid', '=', 'locations.id')
-            ->get(array('trips.id', 'trips.title', 'trips.cost', 'locations.name', 'locations.day'));
+            ->get(array('trips.number', 'trips.title', 'trips.cost', 'locations.name', 'locations.day'));
     }
 
 }
