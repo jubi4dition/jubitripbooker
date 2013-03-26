@@ -10,15 +10,15 @@ class Trips {
     public static function getAll()
     {
         return DB::table('trips')
-            ->left_join('locations', 'trips.lid', '=', 'locations.id')
+            ->join('locations', 'trips.lid', '=', 'locations.id')
             ->get(array('trips.number', 'trips.title', 'trips.cost', 'locations.name', 'locations.day'));
     }
 
     public static function getByNumber($number)
     {
         return DB::table('trips')
-            ->where('number', '=', $number)
-            ->first();
+            ->join('locations', 'trips.lid', '=', 'locations.id')
+            ->first(array('trips.id', 'trips.number', 'trips.title', 'locations.name'));
     }
 
     public static function hasNumber($number)

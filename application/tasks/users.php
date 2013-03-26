@@ -32,4 +32,11 @@ class Users_Task {
             $i++;
         }
     }
+
+    public function test($arguments)
+    {
+        $trip = Trips::getByNumber(103);
+
+        var_dump($trip);
+    }
 }

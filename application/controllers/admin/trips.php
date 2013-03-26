@@ -59,9 +59,9 @@ class Admin_Trips_Controller extends Base_Controller {
         return Response::json(array('success' => true));
     }
 
-    /*public function get_search()
+    public function get_search()
     {
-        return View::make('admin/users.search');
+        return View::make('admin/trips.search');
     }
 
     public function post_search()
@@ -70,22 +70,22 @@ class Admin_Trips_Controller extends Base_Controller {
         
         if ($validation->fails()) return Response::json(array('success' => false));
 
-        $user = Users::getByNumber(Input::get('number'));
+        $trip = Trips::getByNumber(Input::get('number'));
 
-        if ($user == null) return Response::json(array('success' => false));
+        if ($trip == null) return Response::json(array('success' => false));
 
         $data = array(
             'success' => true,
-            'uid' => $user->id,
-            'firstname' => $user->firstname,
-            'lastname' => $user->lastname,
-            'number' => $user->number
+            'tid' => $trip->id,
+            'title' => $trip->title,
+            'location' => $trip->name,
+            'number' => $trip->number
         );
 
         return Response::json($data);
     }
 
-    public function get_delete()
+    /*public function get_delete()
     {
         $users = Users::getAll();
 
