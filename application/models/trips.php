@@ -14,4 +14,24 @@ class Trips {
             ->get(array('trips.number', 'trips.title', 'trips.cost', 'locations.name', 'locations.day'));
     }
 
+    public static function getByNumber($number)
+    {
+        return DB::table('trips')
+            ->where('number', '=', $number)
+            ->first();
+    }
+
+    public static function hasNumber($number)
+    {
+        $trip = self::getByNumber($number);
+
+        return ($trip != null) ? true : false;
+    }
+
+    public static function insert($number, $locationID, $title, $cost)
+    {
+        return DB::table('trips')->insert(array(
+            'lid' => $locationID, 'number' => $number, 'title' => $title, 'cost' => $cost));
+    }
+
 }

@@ -24,17 +24,21 @@ class Admin_Trips_Controller extends Base_Controller {
             ->with('trips', $trips);
     }
 
-    /*public function get_add()
+    public function get_add()
     {
-        return View::make('admin/users.add');
+        $locations = Locations::getAll();
+
+        return View::make('admin/trips.add')
+            ->with('locations', $locations);
     }
 
     public function post_add()
     {
         $rules = array(
-            'firstname' => 'required|max:60|alpha_dash',
-            'lastname' => 'required|max:60|alpha_dash',
-            'number' => 'required|integer'
+            'number' => 'required|integer',
+            'locationID' => 'required|integer',
+            'title' => 'required|max:120',
+            'cost' => 'required|integer'
         );
 
         $validation = Validator::make(Input::get(), $rules);
@@ -44,17 +48,18 @@ class Admin_Trips_Controller extends Base_Controller {
             return Helper::json(false, $message);
         }
 
-        if (Users::hasNumber(Input::get('number'))) {
+        if (Trips::hasNumber(Input::get('number'))) {
             $message = "Number already in use!";
             return Helper::json(false, $message);
         }
 
-        Users::insert(Input::get('firstname'), Input::get('lastname'), Input::get('number'));
+        Trips::insert(Input::get('number'), Input::get('locationID'), 
+            Input::get('title'), Input::get('cost'));
 
         return Response::json(array('success' => true));
     }
 
-    public function get_search()
+    /*public function get_search()
     {
         return View::make('admin/users.search');
     }
