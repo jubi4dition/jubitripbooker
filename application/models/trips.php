@@ -19,7 +19,7 @@ class Trips {
         return DB::table('trips')
             ->join('locations', 'trips.lid', '=', 'locations.id')
             ->where('number', '=', $number)
-            ->first(array('trips.id', 'trips.number', 'trips.title', 'locations.name'));
+            ->first(array('trips.id', 'trips.number', 'trips.title', 'trips.places', 'locations.name'));
     }
 
     public static function hasNumber($number)

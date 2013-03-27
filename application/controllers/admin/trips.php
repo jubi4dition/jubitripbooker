@@ -108,7 +108,16 @@ class Admin_Trips_Controller extends Base_Controller {
 
     public function get_status($number)
     {
-        
+        $trip = Trips::getByNumber($number);
+
+        $users = Bookings::who($trip->id);
+
+        $status = (count($users) * 100 ) / $trip->places;
+
+        return View::make('admin/trips.status')
+            ->with('trip', $trip)
+            ->with('users', $users)
+            ->with('status', $status);
     }
 
 }

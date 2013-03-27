@@ -52,8 +52,8 @@ $(document).ready(function() {
             $('#number').val(json.number);
             $('#title').val(json.title);
             $('#location').val(json.location);
-            $('#status').attr('href', urlStatus + json.uid);
-            $('#delete').attr('href', urlDelete + json.uid);
+            $('#status').attr('href', urlStatus + json.number);
+            $('#delete').attr('href', urlDelete + json.number);
         } else {
             $('#number').val('');
             $('#title').val('');

@@ -23,4 +23,19 @@ class Bookings {
         return DB::table('bookings')->where_id($booked_trip)->delete();
     }
 
+    public static function trip($tid)
+    {
+        return DB::table('bookings')
+            ->where('tid', '=', $tid)
+            ->count();
+    }
+
+    public static function who($tid)
+    {
+        return DB::table('bookings')
+            ->join('users', 'bookings.uid', '=', 'users.id')
+            ->where('tid', '=', $tid)
+            ->get();
+    }
+
 }
