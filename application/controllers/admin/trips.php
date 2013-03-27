@@ -106,4 +106,9 @@ class Admin_Trips_Controller extends Base_Controller {
         return Redirect::to('admin/users/');
     }*/
 
+    public function get_status($number)
+    {
+        
+    }
+
 }
