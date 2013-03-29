@@ -6,17 +6,20 @@
     <h2>Trips</h2>
   </div>
   <div class="row">
-  <div class="span2 offset1">
+  <div class="span5 offset3">
     <a href="<?=URL::to('admin/trips/show'); ?>" class="btn btn-primary btn-block">Show</a>
   </div>
-  <div class="span2">
-    <a href="<?=URL::to('admin/trips/add'); ?>" class="btn btn-success btn-block">Add</a>
   </div>
-  <div class="span2">
+  <br>
+  <div class="row">
+  <div class="span5 offset3">
     <a href="<?=URL::to('admin/trips/search'); ?>" class="btn btn-warning btn-block">Search</a>
   </div>
-  <div class="span2">
-    <a href="<?=URL::to('admin/trips/delete'); ?>" class="btn btn-danger btn-block">Delete</a>
+  </div>
+  <br>
+  <div class="row">
+  <div class="span5 offset3">
+    <a href="<?=URL::to('admin/trips/add'); ?>" class="btn btn-success btn-block">Add</a>
   </div>
   </div>
 </div>
@@ -26,7 +29,7 @@
 <script>
 $(document).ready(function() {
 
-  $('#content .btn').css('padding', '40px 0px');
+  $('#content .btn').css('padding', '30px 0px');
   
   $('#content').fadeIn(1000);
   

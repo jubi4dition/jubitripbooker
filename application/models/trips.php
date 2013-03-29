@@ -43,4 +43,9 @@ class Trips {
             'lid' => $locationID, 'number' => $number, 'title' => $title, 'cost' => $cost));
     }
 
+    public static function delete($id)
+    {
+        return DB::table('trips')->where('id', '=', $id)->delete();
+    }
+
 }

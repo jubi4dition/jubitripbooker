@@ -85,30 +85,33 @@ class Admin_Trips_Controller extends Base_Controller {
         return Response::json($data);
     }
 
-    /*public function get_delete()
+    public function get_delete($number)
     {
-        $users = Users::getAll();
+        $trip = Trips::getByNumber($number);
 
-        return View::make('admin/users.delete')
-            ->with('users', $users);
+        return View::make('admin/trips.delete')
+            ->with('trip', $trip);
     }
 
     public function post_delete()
     {
-        $validation = Validator::make(Input::get(), array('userID' => 'required|integer'));
+        $validation = Validator::make(Input::get(), array('tripID' => 'required|integer'));
         
         if ($validation->fails()) {
-            return Redirect::to('admin/users/delete');
+            $message = "Invalid input!";
+            return Helper::json(false, $message);
         }
 
-        Users::delete(Input::get('userID'));
+        Trips::delete(Input::get('tripID'));
 
-        return Redirect::to('admin/users/');
-    }*/
+        return Response::json(array('success' => true));
+    }
 
     public function get_status($number)
     {
         $trip = Trips::getByNumber($number);
+
+        if ($trip == null) return Redirect::to('admin/trips');
 
         $users = Bookings::who($trip->id);
 
