@@ -14,6 +14,14 @@ class Trips {
             ->get(array('trips.number', 'trips.title', 'trips.cost', 'locations.name', 'locations.day'));
     }
 
+    public static function paginate()
+    {
+        return DB::table('trips')
+            ->join('locations', 'trips.lid', '=', 'locations.id')
+            ->order_by('trips.number', 'asc')
+            ->paginate(25, array('trips.number', 'trips.title', 'trips.cost', 'locations.name', 'locations.day'));
+    }
+
     public static function getByNumber($number)
     {
         return DB::table('trips')

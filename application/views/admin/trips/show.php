@@ -15,18 +15,28 @@
       <th>Cost</th>
       <th>Location</th>
       <th>Day</th>
+      <th>Actions</th>
     </tr>
   </thead>
-  <? foreach ($trips as $trip): ?>
+  <? foreach ($trips->results as $trip): ?>
   <tr>
     <td><?=$trip->number; ?></td>
     <td><?=$trip->title; ?></td>
     <td><?=$trip->cost; ?>€</td>
     <td><?=$trip->name; ?></td>
     <td><?=$trip->day; ?></td>
+    <td>
+      <a href="<?=Url::to('admin/trips/status/'.$trip->number); ?>" class="btn btn-info">Status</a>
+      <a href="<?=Url::to('admin/trips/delete/'.$trip->number); ?>" class="btn btn-danger">Delete</a>
+    </td>
   </tr>
   <? endforeach; ?>
   </table>
+  </div>
+  </div>
+  <div class="row">
+  <div class="span5 offset3">
+    <?=$trips->links(); ?>
   </div>
   </div>
 </div>

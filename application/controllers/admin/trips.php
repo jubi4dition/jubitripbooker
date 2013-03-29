@@ -18,7 +18,7 @@ class Admin_Trips_Controller extends Base_Controller {
 
     public function get_show()
     {
-        $trips = Trips::getAll();
+        $trips = Trips::paginate();
         
         return View::make('admin/trips.show')
             ->with('trips', $trips);
