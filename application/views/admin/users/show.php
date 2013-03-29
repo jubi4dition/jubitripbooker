@@ -13,6 +13,7 @@
       <th>Number</th>
       <th>Firstname</th>
       <th>Lastname</th>
+      <th>Actions</th>
     </tr>
   </thead>
   <? foreach ($users->results as $user): ?>
@@ -20,6 +21,10 @@
     <td><?=$user->number; ?></td>
     <td><?=$user->firstname; ?></td>
     <td><?=$user->lastname; ?></td>
+    <td>
+      <a href="<?=Url::to('admin/users/bookings/'.$user->number); ?>" class="btn btn-info">Bookings</a>
+      <a href="<?=Url::to('admin/users/delete/'.$user->number); ?>" class="btn btn-danger">Delete</a>
+    </td>
   </tr>
   <? endforeach; ?>
   </table>

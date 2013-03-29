@@ -18,6 +18,13 @@ class Users {
             ->first();
     }
 
+    public static function paginate()
+    {
+        return DB::table('users')
+            ->order_by('users.id', 'desc')
+            ->paginate(25);
+    }
+
     public static function hasNumber($number)
     {
         $user = self::getByNumber($number);
