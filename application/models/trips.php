@@ -18,7 +18,7 @@ class Trips {
     {
         return DB::table('trips')
             ->join('locations', 'trips.lid', '=', 'locations.id')
-            ->order_by('trips.number', 'asc')
+            ->order_by('trips.id', 'desc')
             ->paginate(25, array('trips.number', 'trips.title', 'trips.cost', 'locations.name', 'locations.day'));
     }
 
