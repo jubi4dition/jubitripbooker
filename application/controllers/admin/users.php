@@ -110,4 +110,23 @@ class Admin_Users_Controller extends Base_Controller {
         return Response::json(array('success' => true));
     }
 
+    public function get_bookings($number)
+    {
+        $validation = Validator::make(array('number' => $number), array('number' => 'required|integer'));
+
+        if ($validation->fails()) {
+            return Redirect::to('admin/users');
+        }
+
+        $user = Users::getByNumber($number);
+
+        if ($user == null) return Redirect::to('admin/users');
+
+        $trips = Bookings::get($user->id);
+
+        return View::make('admin/users.bookings')
+            ->with('user', $user)
+            ->with('trips', $trips);
+    }
+
 }

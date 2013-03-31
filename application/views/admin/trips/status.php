@@ -6,7 +6,7 @@
     <h2>Trips Status</h2>
   </div>
   <div class="row">
-  <div class="span5 offset3">
+  <div class="span7 offset2">
    <h3><?=$trip->title; ?> (<?=$trip->number; ?>)</h3>
   </div>
   </div>
