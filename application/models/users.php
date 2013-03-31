@@ -50,7 +50,9 @@ class Users {
 
     public static function delete($id)
     {
-        return DB::table('users')->where_id($id)->delete();
+        return DB::table('users')
+            ->where('id', '=', $id)
+            ->delete();
     }
 
     public static function deleteByNumber($number)

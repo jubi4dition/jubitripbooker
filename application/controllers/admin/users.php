@@ -80,12 +80,20 @@ class Admin_Users_Controller extends Base_Controller {
         return Response::json($data);
     }
 
-    public function get_delete()
+    public function get_delete($number)
     {
-        $users = Users::getAll();
+        $validation = Validator::make(array('number' => $number), array('number' => 'required|integer'));
+
+        if ($validation->fails()) {
+            return Redirect::to('admin/users');
+        }
+
+        $user = Users::getByNumber($number);
+
+        if ($user == null) return Redirect::to('admin/users');;
 
         return View::make('admin/users.delete')
-            ->with('users', $users);
+            ->with('user', $user);
     }
 
     public function post_delete()
@@ -93,12 +101,13 @@ class Admin_Users_Controller extends Base_Controller {
         $validation = Validator::make(Input::get(), array('userID' => 'required|integer'));
         
         if ($validation->fails()) {
-            return Redirect::to('admin/users/delete');
+            $message = "Invalid input!";
+            return Helper::json(false, $message);
         }
 
         Users::delete(Input::get('userID'));
 
-        return Redirect::to('admin/users/');
+        return Response::json(array('success' => true));
     }
 
 }
