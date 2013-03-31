@@ -87,7 +87,15 @@ class Admin_Trips_Controller extends Base_Controller {
 
     public function get_delete($number)
     {
+        $validation = Validator::make(array('number' => $number), array('number' => 'required|integer'));
+
+        if ($validation->fails()) {
+            return Redirect::to('admin/trips');
+        }
+
         $trip = Trips::getByNumber($number);
+
+        if ($trip == null) return Redirect::to('admin/trips');
 
         return View::make('admin/trips.delete')
             ->with('trip', $trip);

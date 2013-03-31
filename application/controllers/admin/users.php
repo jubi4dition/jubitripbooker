@@ -90,7 +90,7 @@ class Admin_Users_Controller extends Base_Controller {
 
         $user = Users::getByNumber($number);
 
-        if ($user == null) return Redirect::to('admin/users');;
+        if ($user == null) return Redirect::to('admin/users');
 
         return View::make('admin/users.delete')
             ->with('user', $user);
