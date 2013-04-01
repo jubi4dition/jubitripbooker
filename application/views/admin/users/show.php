@@ -22,8 +22,8 @@
     <td><?=$user->firstname; ?></td>
     <td><?=$user->lastname; ?></td>
     <td>
-      <a href="<?=Url::to('admin/users/bookings/'.$user->number); ?>" class="btn btn-info">Bookings</a>
-      <a href="<?=Url::to('admin/users/delete/'.$user->number); ?>" class="btn btn-danger">Delete</a>
+      <a href="<?=Url::to('admin/users/bookings/'.$user->number); ?>" class="btn btn-small btn-info">Bookings</a>
+      <a href="<?=Url::to('admin/users/delete/'.$user->number); ?>" class="btn btn-small btn-danger">Delete</a>
     </td>
   </tr>
   <? endforeach; ?>

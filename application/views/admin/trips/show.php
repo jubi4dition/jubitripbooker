@@ -26,8 +26,8 @@
     <td><?=$trip->name; ?></td>
     <td><?=$trip->day; ?></td>
     <td>
-      <a href="<?=Url::to('admin/trips/status/'.$trip->number); ?>" class="btn btn-info">Status</a>
-      <a href="<?=Url::to('admin/trips/delete/'.$trip->number); ?>" class="btn btn-danger">Delete</a>
+      <a href="<?=Url::to('admin/trips/status/'.$trip->number); ?>" class="btn btn-small btn-info">Status</a>
+      <a href="<?=Url::to('admin/trips/delete/'.$trip->number); ?>" class="btn btn-small btn-danger">Delete</a>
     </td>
   </tr>
   <? endforeach; ?>
