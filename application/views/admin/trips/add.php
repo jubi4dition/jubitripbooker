@@ -66,6 +66,8 @@ $(document).ready(function() {
     return false;
   });
 
+  $('#nav-trips').addClass('active');
+
   $('#content').fadeIn(1000);
 });
 </script>

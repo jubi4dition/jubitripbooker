@@ -5,11 +5,9 @@
       <a class="brand" href="<?=URL::to('admin'); ?>">JTB</a>
       <ul class="nav">
         <li class="divider-vertical"></li>
-        <li id="nav-book"><a href="<?=URL::to('admin/users'); ?>"><i class="icon-globe icon-white"></i> Users</a></li>
+        <li id="nav-users"><a href="<?=URL::to('admin/users'); ?>"><i class="icon-user icon-white"></i> Users</a></li>
         <li class="divider-vertical"></li>
-        <li id="nav-booked"><a href="<?=URL::to('admin/trips'); ?>"><i class="icon-briefcase icon-white"></i> Trips</a></li>
-        <li class="divider-vertical"></li>
-        <li id="nav-booked"><a href="<?=URL::to('admin/locations'); ?>"><i class="icon-briefcase icon-white"></i> Locations</a></li>
+        <li id="nav-trips"><a href="<?=URL::to('admin/trips'); ?>"><i class="icon-briefcase icon-white"></i> Trips</a></li>
         <li class="divider-vertical"></li>
       </ul>
       <div class="pull-right">

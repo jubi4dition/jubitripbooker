@@ -61,6 +61,8 @@ $(document).ready(function() {
     return false;
   });
 
+  $('#nav-users').addClass('active');
+
   $('#content').fadeIn(1000);
 });
 </script>

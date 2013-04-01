@@ -41,6 +41,8 @@
 <?=HTML::script('js/jquery.js'); ?>
 <script>
 $(document).ready(function() {
+
+  $('#nav-users').addClass('active');
   
   $('#content').fadeIn(1000);
   

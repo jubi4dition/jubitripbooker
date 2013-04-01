@@ -29,6 +29,8 @@
 <script>
 $(document).ready(function() {
 
+  $('#nav-users').addClass('active');
+
   $('#content .btn').css('padding', '30px 0px');
   
   $('#content').fadeIn(1000);

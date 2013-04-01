@@ -45,6 +45,8 @@
 <?=HTML::script('js/jquery.js'); ?>
 <script>
 $(document).ready(function() {
+
+  $('#nav-trips').addClass('active');
   
   $('#content').fadeIn(1000);
   
