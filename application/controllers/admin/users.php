@@ -131,7 +131,7 @@ class Admin_Users_Controller extends Base_Controller {
 
     public function post_cancel()
     {
-        $validation = Validator::make(Input::all(), array('bookingID' => 'required|integer'));
+        $validation = Validator::make(Input::get(), array('bookingID' => 'required|integer'));
         
         if ($validation->fails()) {
             return Response::json(array('success' => false));

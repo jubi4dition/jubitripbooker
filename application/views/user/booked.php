@@ -18,15 +18,15 @@
 			</tr>
 		</thead>
 		<tbody>
-		<? foreach ($booked_trips as $booked_trip): ?>
+		<? foreach ($bookings as $booking): ?>
 		<tr>
-			<td><?=$booked_trip->day; ?></td>
-			<td><?=$booked_trip->name; ?></td>
-			<td><?=$booked_trip->title; ?></td>
-			<td><?=$booked_trip->cost; ?>€</td>
+			<td><?=$booking->day; ?></td>
+			<td><?=$booking->name; ?></td>
+			<td><?=$booking->title; ?></td>
+			<td><?=$booking->cost; ?>€</td>
 			<td>
 			<form class="cancelTrip" style="margin-bottom: 0;">
-				<input type="hidden" name="booking_id" value="<?=$booked_trip->id ?>">
+				<input type="hidden" name="bookingID" value="<?=$booking->id ?>">
 				<button class="btn btn-small btn-danger" type="submit">Cancel</button>
 			</form>
 			</td>
@@ -48,9 +48,8 @@ $(document).ready(function() {
 		var form = $(this);
 		var button = form.children('button');
 		button.prop('disabled', true);
-		button.text('processing...');
 		
-		var faction = "<?=URL::to('user/cancel_trip'); ?>";
+		var faction = "<?=URL::to('user/cancel'); ?>";
 		var fdata = form.serialize();
 
 		$.post(faction, fdata, function(json) {

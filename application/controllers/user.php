@@ -43,29 +43,28 @@ class User_Controller extends Base_Controller {
         }
     }
 
-    public function action_cancel_trip()
+    public function action_booked()
+    { 
+        $bookings = Bookings::get(Session::get('uid'));
+
+        return View::make('user.booked')->with('bookings', $bookings);
+    }
+
+    public function action_cancel()
     {
-        $validation = Validator::make(Input::all(), array('booking_id' => 'required|integer'));
+        $validation = Validator::make(Input::get(), array('bookingID' => 'required|integer'));
         
         if ($validation->fails()) {
             return Response::json(array('success' => false));
         } 
 
-        $bookingID = Input::get('booking_id');
-        $deleted = Bookings::delete($bookingID);
+        $deleted = Bookings::delete(Input::get('bookingID'));
         
         if ($deleted) {
             return Response::json(array('success' => true));
         } else {
             return Response::json(array('success' => false));
         }
-    }
-
-    public function action_booked()
-    { 
-        $bookedTrips = Bookings::get(Session::get('uid'));
-
-        return View::make('user.booked')->with('booked_trips', $bookedTrips);
     }
 
     public function action_profile()
