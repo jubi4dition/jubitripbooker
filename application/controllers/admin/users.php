@@ -122,11 +122,28 @@ class Admin_Users_Controller extends Base_Controller {
 
         if ($user == null) return Redirect::to('admin/users');
 
-        $trips = Bookings::get($user->id);
+        $bookings = Bookings::get($user->id);
 
         return View::make('admin/users.bookings')
             ->with('user', $user)
-            ->with('trips', $trips);
+            ->with('bookings', $bookings);
+    }
+
+    public function post_cancel()
+    {
+        $validation = Validator::make(Input::all(), array('bookingID' => 'required|integer'));
+        
+        if ($validation->fails()) {
+            return Response::json(array('success' => false));
+        } 
+
+        $deleted = Bookings::delete(Input::get('bookingID'));
+        
+        if ($deleted) {
+            return Response::json(array('success' => true));
+        } else {
+            return Response::json(array('success' => false));
+        }
     }
 
 }

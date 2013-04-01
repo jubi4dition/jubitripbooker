@@ -23,14 +23,17 @@
       </tr>
     </thead>
     <tbody>
-    <? foreach ($trips as $trip): ?>
+    <? foreach ($bookings as $booking): ?>
     <tr>
-      <td><?=$trip->day; ?></td>
-      <td><?=$trip->name; ?></td>
-      <td><?=$trip->title; ?></td>
-      <td><?=$trip->cost; ?>€</td>
+      <td><?=$booking->day; ?></td>
+      <td><?=$booking->name; ?></td>
+      <td><?=$booking->title; ?></td>
+      <td><?=$booking->cost; ?>€</td>
       <td>
-        <a href="" class="btn btn-small btn-danger">Cancel</a>
+        <form class="cancelTrip" style="margin-bottom: 0;">
+        <input type="hidden" name="bookingID" value="<?=$booking->id ?>">
+        <button class="btn btn-small btn-danger" type="submit">Cancel</button>
+      </form>
       </td>
     </tr>
     <? endforeach; ?>
@@ -44,9 +47,30 @@
 <?=HTML::script('js/jquery.js'); ?>
 <script>
 $(document).ready(function() {
-  
+
+  $('.cancelTrip').submit(function(){
+    
+    var form = $(this);
+    var button = form.children('button');
+    button.prop('disabled', true);
+    
+    var faction = "<?=URL::to('admin/users/cancel'); ?>";
+    var fdata = form.serialize();
+
+    $.post(faction, fdata, function(json) {
+      
+      if (json.success) {
+        button.text('canceled');
+      } else {
+        button.text('error');
+      }     
+    });
+      
+    return false;
+  });
+
   $('#content').fadeIn(1000);
-  
+
 });
 </script>
 </body>
