@@ -11,7 +11,7 @@
   </div>
   </div>
   <div class="row">
-  <div class="span12">
+  <div class="span11">
     <table class="table table-striped">
     <thead>
       <tr>

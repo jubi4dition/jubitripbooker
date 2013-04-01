@@ -130,7 +130,20 @@ body {
           border-radius: 4px;
 }
 @media (min-width: 1200px) {
+  .span11 {
+    width: 1120px;
+  }
+}
+/*.span12 {
+  width: 900px;
+}
+@media (min-width: 1200px) {
   .span12 {
     width: 1120px;
   }
 }
+@media (min-width: 768px) and (max-width: 979px) {
+  .span12 {
+    width: 685px;
+  }
+}*/
