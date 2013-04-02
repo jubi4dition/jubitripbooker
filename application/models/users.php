@@ -61,5 +61,10 @@ class Users {
             ->where('number', '=', $number)
             ->delete();
     }
+
+    public static function count()
+    {
+        return DB::table('users')->count();
+    }
     
 }

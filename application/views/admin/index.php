@@ -7,21 +7,21 @@
   </div>
   <h3>Welcome to the Admin Dashboard!</h3>
   <div class="row">
-  <div class="span3 offset1">
+  <div class="span4">
     <div class="box box-primary">
-      <p>12</p>
+      <p><?=Users::count(); ?></p>
       <p>Users</p>
     </div>
   </div>
-  <div class="span3">
+  <div class="span4">
     <div class="box box-warning">
-      <p>32</p>
+      <p><?=Trips::count(); ?></p>
       <p>Trips</p>
     </div>
   </div>
-  <div class="span3">
+  <div class="span4">
     <div class="box box-success">
-      <p>44</p>
+      <p><?=Bookings::count(); ?></p>
       <p>Bookings</p>
     </div>
   </div>

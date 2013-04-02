@@ -48,4 +48,9 @@ class Trips {
         return DB::table('trips')->where('id', '=', $id)->delete();
     }
 
+    public static function count()
+    {
+        return DB::table('trips')->count();
+    }
+
 }

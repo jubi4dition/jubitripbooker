@@ -38,4 +38,9 @@ class Bookings {
             ->get();
     }
 
+    public static function count()
+    {
+        return DB::table('bookings')->count();
+    }
+
 }

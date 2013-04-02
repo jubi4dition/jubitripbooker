@@ -13,7 +13,7 @@ body {
 .content { /* The white background content wrapper */
 	background-color: #fff;
 	padding: 20px;
-	margin: 0px -20px 15px;
+	margin: 0px -21px 15px;
 	border-radius: 0px 0px 6px 6px;
 	border: 1px solid #1B3E53;
   border-top-width: 0px; 
