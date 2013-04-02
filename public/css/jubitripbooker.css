@@ -147,3 +147,25 @@ body {
     width: 685px;
   }
 }*/
+.box {
+  padding : 20px 0;
+  width: 100%;
+  display: block;
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: bold;
+}
+.box p {
+  margin: 0;
+}
+.box-primary {
+  background-color: #006DCC;
+}
+.box-warning {
+  background-color: #FAA732;
+}
+.box-success {
+  background-color: #51A351;
+}
