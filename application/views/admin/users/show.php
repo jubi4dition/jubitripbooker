@@ -6,7 +6,7 @@
     <h2>All Users</h2>
   </div>
   <div class="row">
-  <div class="span11">
+  <div class="span12">
   <table class="table table-striped">
   <thead>
     <tr>

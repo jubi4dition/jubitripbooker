@@ -13,7 +13,7 @@ body {
 .content { /* The white background content wrapper */
 	background-color: #fff;
 	padding: 20px;
-	margin: 0px 0px 15px;
+	margin: 0px -20px 15px;
 	border-radius: 0px 0px 6px 6px;
 	border: 1px solid #1B3E53;
   border-top-width: 0px; 
@@ -129,24 +129,6 @@ body {
      -moz-border-radius: 4px;
           border-radius: 4px;
 }
-@media (min-width: 1200px) {
-  .span11 {
-    width: 1120px;
-  }
-}
-/*.span12 {
-  width: 900px;
-}
-@media (min-width: 1200px) {
-  .span12 {
-    width: 1120px;
-  }
-}
-@media (min-width: 768px) and (max-width: 979px) {
-  .span12 {
-    width: 685px;
-  }
-}*/
 .box {
   padding : 20px 0;
   width: 100%;

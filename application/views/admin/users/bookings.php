@@ -6,12 +6,12 @@
     <h2>Users Bookings</h2>
   </div>
   <div class="row">
-  <div class="span11">
+  <div class="span12">
     <h4>Bookings from <?=$user->firstname." ".$user->lastname; ?></h4>
   </div>
   </div>
   <div class="row">
-  <div class="span11">
+  <div class="span12">
     <table class="table table-striped">
     <thead>
       <tr>
