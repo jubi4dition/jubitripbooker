@@ -151,3 +151,16 @@ body {
 .box-success {
   background-color: #51A351;
 }
+.btn-box {
+  display: block;
+  width: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  font-size: 22px;
+  line-height: 30px;
+}

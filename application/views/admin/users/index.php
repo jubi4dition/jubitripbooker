@@ -6,20 +6,14 @@
     <h2>Users</h2>
   </div>
   <div class="row">
-  <div class="span5 offset3">
-    <a href="<?=URL::to('admin/users/show'); ?>" class="btn btn-primary btn-block">Show</a>
+  <div class="span4">
+    <a href="<?=URL::to('admin/users/show'); ?>" class="btn btn-primary btn-box">Show</a>
   </div>
+  <div class="span4">
+    <a href="<?=URL::to('admin/users/search'); ?>" class="btn btn-warning btn-box">Search</a>
   </div>
-  <br>
-  <div class="row">
-  <div class="span5 offset3">
-    <a href="<?=URL::to('admin/users/search'); ?>" class="btn btn-warning btn-block">Search</a>
-  </div>
-  </div>
-  <br>
-  <div class="row">
-  <div class="span5 offset3">
-    <a href="<?=URL::to('admin/users/add'); ?>" class="btn btn-success btn-block">Add</a>
+  <div class="span4">
+    <a href="<?=URL::to('admin/users/add'); ?>" class="btn btn-success btn-box">Add</a>
   </div>
   </div>
 </div>
@@ -30,8 +24,6 @@
 $(document).ready(function() {
 
   $('#nav-users').addClass('active');
-
-  $('#content .btn').css('padding', '30px 0px');
   
   $('#content').fadeIn(1000);
   
