@@ -24,8 +24,6 @@
 $(document).ready(function() {
 
   $('#nav-trips').addClass('active');
-
-  $('#content .btn').css('padding', '30px 0px');
   
   $('#content').fadeIn(1000);
   
