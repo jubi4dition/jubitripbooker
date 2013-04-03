@@ -6,7 +6,7 @@
     <h2>Your booked Trips</h2>
   </div>
   <div class="row">
-  <div class="span9 offset1">
+  <div class="span10 offset1">
     <table class="table table-bordered">
     <thead>
       <tr style="background-color: #D9EDF7;">

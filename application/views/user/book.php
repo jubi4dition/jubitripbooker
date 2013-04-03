@@ -7,7 +7,7 @@
 	</div>
 	<? foreach ($locations as $location): ?>
 	<div class="row">
-	<div class="span9 offset1">
+	<div class="span10 offset1">
 		<form class="bookTrip">
 		<input type="hidden" name="location" value="<?=$location->name; ?>">
 		<table class="table table-bordered">

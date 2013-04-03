@@ -6,7 +6,7 @@
 		<h2>Welcome to your JTB-Account</h2>
 	</div>
 	<div class="row">
-	<div class="span9 offset1">
+	<div class="span10 offset1">
 		<div class="alert alert-info">
 			<a href="<?=URL::to('user/book'); ?>" class="btn btn-info"><i class="icon-globe icon-white"></i> Book</a>
 			<strong>You can book your trips here</strong>		
@@ -18,7 +18,7 @@
 	</div>
 	</div>
 	<div class="row">
-	<div class="span9 offset1">
+	<div class="span10 offset1">
 		<h3>The locations of your cruise</h3>
 		<table class="table table-bordered">
 		<thead>
