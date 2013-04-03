@@ -27,10 +27,9 @@
 		</tbody>
 		</table>
 		<div class="pull-right">
-			<button type="submit" class="btn btn-info btn-large" data-loading-text="processing...">
+			<button type="submit" class="btn btn-info btn-large">
 			<i class="icon-ok icon-white"></i> Book it</button>
-		</div>
-		
+		</div>		
 		<div class="alert alert-success" style="display: none; width:300px;"><strong>Successful</strong></div>
 		<div class="alert alert-error" style="display: none; width:300px;"><strong>Error</strong></div>
 		</form>	
@@ -42,7 +41,6 @@
 <?=render('includes.footer'); ?>
 </div>
 <?=HTML::script('js/jquery.js'); ?>
-<?=HTML::script('js/bootstrap-button.js'); ?>
 <script>
 $(document).ready(function() {
 
@@ -51,9 +49,9 @@ $(document).ready(function() {
 		var form = $(this);
 		var form_button = form.find('button');
 		var alert_success = form.find('.alert.alert-success');
-		var alert_error = form.find('alert.alert-error');
+		var alert_error = form.find('.alert.alert-error');
 
-		form_button.button('loading');
+		form_button.prop('disabled', true);
 		alert_success.hide();
 		alert_error.hide();
 		
@@ -68,7 +66,7 @@ $(document).ready(function() {
 				alert_error.show();
 			}
 
-			form_button.button('reset');			
+			form_button.prop('disabled', false);			
 		});
 			
 		return false;
