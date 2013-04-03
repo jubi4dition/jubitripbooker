@@ -164,3 +164,6 @@ body {
   font-size: 22px;
   line-height: 30px;
 }
+.td-center {
+  text-align: center !important;
+}

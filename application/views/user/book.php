@@ -21,7 +21,7 @@
 		<tr>
 			<td><?=$trip->title; ?></td>
 			<td><?=$trip->cost; ?>€</td>
-			<td><input type="radio" name="<?=$location->name; ?>" value="<?=$trip->id ?>" required></td>
+			<td class="td-center"><input type="radio" name="<?=$location->name; ?>" value="<?=$trip->id ?>" required></td>
 		</tr>
 		<? endforeach; ?>
 		</tbody>
