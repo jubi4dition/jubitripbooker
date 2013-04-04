@@ -43,4 +43,14 @@ class Bookings {
         return DB::table('bookings')->count();
     }
 
+    public static function exists($userID, $tripID)
+    {
+        $exists = DB::table('bookings')
+            ->where('uid', '=', $userID)
+            ->where('tid', '=', $tripID)
+            ->first();
+
+        return ($exists != null) ? true : false;
+    }
+
 }

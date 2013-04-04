@@ -39,6 +39,11 @@ class User_Controller extends Base_Controller {
         $tripID = Input::get('tripID');
         $userID = Session::get('uid');
 
+        if (Bookings::exists($userID, $tripID)) {
+            $message = "Already booked!";
+            return Helper::json(false, $message);
+        }
+
         $booked = Bookings::book($userID, $tripID);
         
         if ($booked) {

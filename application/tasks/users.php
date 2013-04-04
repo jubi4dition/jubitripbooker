@@ -35,8 +35,11 @@ class Users_Task {
 
     public function test($arguments)
     {
-        $trip = Trips::getByNumber(103);
-
-        var_dump($trip);
+        $check = Bookings::exists(3, 16);
+        if ($check) {
+            echo "true";
+        } else {
+            echo "false";
+        }
     }
 }
