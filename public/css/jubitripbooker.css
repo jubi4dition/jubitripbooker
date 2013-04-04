@@ -170,3 +170,6 @@ body {
 .status-box {
   height: 50px;
 }
+.alert {
+  font-weight: bold;
+}

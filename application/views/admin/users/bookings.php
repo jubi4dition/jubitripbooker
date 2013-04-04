@@ -31,7 +31,7 @@
       <td><?=$booking->cost; ?>€</td>
       <td>
         <form class="cancelTrip" style="margin-bottom: 0;">
-        <input type="hidden" name="bookingID" value="<?=$booking->id ?>">
+        <input type="hidden" name="bookingID" value="<?=$booking->id; ?>">
         <button class="btn btn-small btn-danger" type="submit">Cancel</button>
       </form>
       </td>
@@ -40,6 +40,12 @@
     </tbody>
   </table>
   </div>
+  </div>
+  <div id="status" class="row status-box">
+    <div class="span6 offset3">
+      <div id="success" class="alert alert-success hide">The booking has been canceled!</div>
+      <div id="error" class="alert alert-error hide">Error</div>
+    </div>
   </div>
 </div>
 <?=render('includes.footer'); ?>
@@ -53,6 +59,9 @@ $(document).ready(function() {
     var form = $(this);
     var button = form.children('button');
     button.prop('disabled', true);
+
+    $('#success').hide();
+    $('#error').hide();
     
     var faction = "<?=URL::to('admin/users/cancel'); ?>";
     var fdata = form.serialize();
@@ -60,9 +69,9 @@ $(document).ready(function() {
     $.post(faction, fdata, function(json) {
       
       if (json.success) {
-        button.text('canceled');
+          $('#success').show();
       } else {
-        button.text('error');
+          $('#error').show();
       }     
     });
       
