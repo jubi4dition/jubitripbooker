@@ -9,7 +9,6 @@
 	<div class="row">
 	<div class="span10 offset1">
 		<form class="bookTrip">
-		<input type="hidden" name="location" value="<?=$location->name; ?>">
 		<table class="table table-bordered">
 		<tbody>
 		<tr class="info">
@@ -21,7 +20,7 @@
 		<tr>
 			<td><?=$trip->title; ?></td>
 			<td><?=$trip->cost; ?>€</td>
-			<td class="td-center"><input type="radio" name="<?=$location->name; ?>" value="<?=$trip->id ?>" required></td>
+			<td class="td-center"><input type="radio" name="tripID" value="<?=$trip->id ?>" required></td>
 		</tr>
 		<? endforeach; ?>
 		</tbody>

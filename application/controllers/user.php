@@ -30,8 +30,13 @@ class User_Controller extends Base_Controller {
 
     public function action_book_trip()
     {
-        $location = Input::get('location');
-        $tripID = Input::get($location);
+        $validation = Validator::make(Input::get(), array('tripID' => 'required|integer'));
+
+        if ($validation->fails()) {
+            return Response::json(array('success' => false));
+        } 
+
+        $tripID = Input::get('tripID');
         $userID = Session::get('uid');
 
         $booked = Bookings::book($userID, $tripID);
