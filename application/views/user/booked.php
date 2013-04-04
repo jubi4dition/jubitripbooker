@@ -24,7 +24,7 @@
       <td><?=$booking->name; ?></td>
       <td><?=$booking->title; ?></td>
       <td><?=$booking->cost; ?>€</td>
-      <td>
+      <td class="td-center">
       <form class="cancelTrip" style="margin-bottom: 0;">
         <input type="hidden" name="bookingID" value="<?=$booking->id ?>">
         <button class="btn btn-small btn-danger" type="submit">Cancel</button>
@@ -35,6 +35,12 @@
     </tbody>
   </table>
   </div>
+  </div>
+  <div id="status" class="row" style="height: 50px">
+    <div class="span6 offset3">
+      <div id="success" class="alert alert-success hide">The booking has been canceled!</div>
+      <div id="error" class="alert alert-error hide">Error</div>
+    </div>
   </div>
 </div>
 <?=render('includes.footer'); ?>
@@ -55,9 +61,9 @@ $(document).ready(function() {
     $.post(faction, fdata, function(json) {
       
       if (json.success) {
-        button.text('canceled');
+          $('#success').show();
       } else {
-        button.text('error');
+          $('#error').show();
       }     
     });
       
