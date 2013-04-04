@@ -35,11 +35,7 @@ class Users_Task {
 
     public function test($arguments)
     {
-        $check = Bookings::exists(3, 16);
-        if ($check) {
-            echo "true";
-        } else {
-            echo "false";
-        }
+        $check = Bookings::free(11);
+        echo $check;
     }
 }

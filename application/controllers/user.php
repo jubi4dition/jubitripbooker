@@ -44,9 +44,12 @@ class User_Controller extends Base_Controller {
             return Helper::json(false, $message);
         }
 
-        $booked = Bookings::book($userID, $tripID);
+        if (!Bookings::free($tripID)) {
+            $message = "The trip is booked out!";
+            return Helper::json(false, $message);
+        }
         
-        if ($booked) {
+        if (Bookings::insert($userID, $tripID)) {
             return Response::json(array('success' => true));
         } else {
             return Response::json(array('success' => false));

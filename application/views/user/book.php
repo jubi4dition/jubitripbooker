@@ -29,8 +29,8 @@
 			<button type="submit" class="btn btn-info btn-large">
 			<i class="icon-ok icon-white"></i> Book it</button>
 		</div>		
-		<div class="alert alert-success" style="display: none; width:300px;"><strong>Successful</strong></div>
-		<div class="alert alert-error" style="display: none; width:300px;"><strong>Error</strong></div>
+		<div class="alert alert-success" style="display: none; width:300px;">The trip has been booked!</div>
+		<div class="alert alert-error" style="display: none; width:300px;">Error</div>
 		</form>	
 	</div>
 	</div>
@@ -62,6 +62,7 @@ $(document).ready(function() {
 			if (json.success) {
 				alert_success.show();
 			} else {
+				alert_error.html(json.message);
 				alert_error.show();
 			}
 

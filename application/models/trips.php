@@ -53,4 +53,11 @@ class Trips {
         return DB::table('trips')->count();
     }
 
+    public static function places($tripID)
+    {
+        $trip = DB::table('trips')->where_id($tripID)->first();
+
+        return ($trip != null) ? $trip->places : 0;
+    }
+
 }

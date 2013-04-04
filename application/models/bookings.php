@@ -2,7 +2,7 @@
 
 class Bookings {
     
-    public static function book($uid, $tid)
+    public static function insert($uid, $tid)
     {
         return DB::table('bookings')->insert(
             array('uid' => $uid, 'tid' => $tid));
@@ -51,6 +51,14 @@ class Bookings {
             ->first();
 
         return ($exists != null) ? true : false;
+    }
+
+    public static function free($tripID)
+    {
+        $used = self::trip($tripID);
+        $places = Trips::places($tripID);
+
+        return ($places > $used) ? true : false;
     }
 
 }
