@@ -26,7 +26,7 @@
       <td><?=$booking->cost; ?>€</td>
       <td class="td-center">
       <form class="cancelTrip" style="margin-bottom: 0;">
-        <input type="hidden" name="bookingID" value="<?=$booking->id ?>">
+        <input type="hidden" name="bookingID" value="<?=$booking->id; ?>">
         <button class="btn btn-small btn-danger" type="submit">Cancel</button>
       </form>
       </td>
@@ -36,7 +36,7 @@
   </table>
   </div>
   </div>
-  <div id="status" class="row" style="height: 50px">
+  <div id="status" class="row status-box">
     <div class="span6 offset3">
       <div id="success" class="alert alert-success hide">The booking has been canceled!</div>
       <div id="error" class="alert alert-error hide">Error</div>
@@ -54,6 +54,9 @@ $(document).ready(function() {
     var form = $(this);
     var button = form.children('button');
     button.prop('disabled', true);
+
+    $('#success').hide();
+    $('#error').hide();
     
     var faction = "<?=URL::to('user/cancel'); ?>";
     var fdata = form.serialize();

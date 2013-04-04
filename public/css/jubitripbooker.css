@@ -167,3 +167,6 @@ body {
 .td-center {
   text-align: center !important;
 }
+.status-box {
+  height: 50px;
+}
