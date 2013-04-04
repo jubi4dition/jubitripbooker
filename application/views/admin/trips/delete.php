@@ -6,22 +6,18 @@
     <h2>Trips Delete</h2>
   </div>
   <div class="row">
-  <div class="span5 offset3">
-    <form id="formDelete" class="well" action="<?=Url::to('admin/trips/delete/'); ?>" method="post" accept-charset="utf-8">
+  <div class="span6 offset3">
+    <form id="formDelete" class="well" action="<?=Url::to('admin/trips/delete'); ?>" method="post" accept-charset="utf-8">
       <input type="hidden" name="tripID" value="<?=$trip->id; ?>">
       <p>You really want to delete the Trip:<br><b><?=$trip->title; ?></b></p>
       <button type="submit" class="btn btn-block btn-danger"><i class="icon-trash icon-white"></i> Delete Trip</button>
     </form>
   </div>
   </div>
-  <div id="success" class="row" style="display: none">
-    <div class="span5 offset3">
-      <div id="successMessage" class="alert alert-success"><b>The trip has been deleted!</b></div>
-    </div>
-  </div>
-  <div id="error" class="row" style="display: none">
-    <div class="span5 offset3">
-      <div id="errorMessage" class="alert alert-error">Error</div>
+  <div id="status" class="row status-box">
+    <div class="span6 offset3">
+      <div id="success" class="alert alert-success hide">The trip has been added!</div>
+      <div id="error" class="alert alert-error hide">Error</div>
     </div>
   </div>
 </div>
@@ -47,7 +43,7 @@ $(document).ready(function() {
         if (json.success) {
             $('#success').show();
         } else {
-            $('#errorMessage').html(json.message);
+            $('#error').html(json.message);
             $('#error').show();
         }
 
