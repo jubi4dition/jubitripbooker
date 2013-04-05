@@ -5,6 +5,7 @@
   <div class="page-header">
     <h2>Trips</h2>
   </div>
+  <h3>Manage the Trips!</h3>
   <div class="row">
   <div class="span4">
     <a href="<?=URL::to('admin/trips/show'); ?>" class="btn btn-primary btn-box">Show</a>

@@ -52,8 +52,8 @@ $(document).ready(function() {
             $('#number').val(json.number);
             $('#firstname').val(json.firstname);
             $('#lastname').val(json.lastname);
-            $('#bookings').attr('href', urlBookings + json.uid);
-            $('#delete').attr('href', urlDelete + json.uid);
+            $('#bookings').attr('href', urlBookings + json.number);
+            $('#delete').attr('href', urlDelete + json.number);
         } else {
             $('#number').val('');
             $('#firstname').val('');
