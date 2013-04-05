@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `bookings` (
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`,`tid`),
   KEY `tid` (`tid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=75 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=127 ;
 
 --
 -- Dumping data for table `bookings`
@@ -60,14 +60,14 @@ INSERT INTO `bookings` (`id`, `uid`, `tid`) VALUES
 (12, 3, 22),
 (18, 3, 25),
 (19, 3, 28),
-(37, 4, 2),
+(82, 4, 2),
 (29, 4, 8),
 (38, 4, 9),
 (30, 4, 14),
 (39, 4, 19),
-(31, 4, 22),
+(86, 4, 23),
 (40, 4, 24),
-(41, 4, 28),
+(83, 4, 28),
 (43, 5, 1),
 (44, 5, 7),
 (45, 5, 11),
@@ -84,22 +84,57 @@ INSERT INTO `bookings` (`id`, `uid`, `tid`) VALUES
 (59, 8, 23),
 (65, 8, 25),
 (66, 8, 28),
-(52, 10, 5),
 (53, 10, 8),
 (54, 10, 11),
 (55, 10, 15),
 (56, 10, 19),
-(51, 10, 22),
 (57, 10, 25),
 (58, 10, 29),
 (68, 11, 1),
 (69, 11, 7),
 (70, 11, 9),
 (71, 11, 16),
-(72, 11, 17),
 (67, 11, 23),
-(73, 11, 26),
-(74, 11, 28);
+(88, 12, 6),
+(89, 12, 7),
+(90, 12, 11),
+(91, 12, 13),
+(92, 12, 19),
+(87, 12, 23),
+(93, 12, 25),
+(94, 12, 28),
+(120, 13, 6),
+(121, 13, 8),
+(122, 13, 12),
+(123, 13, 15),
+(124, 13, 21),
+(119, 13, 23),
+(125, 13, 24),
+(126, 13, 29),
+(105, 15, 4),
+(104, 15, 6),
+(106, 15, 11),
+(107, 15, 14),
+(108, 15, 21),
+(103, 15, 23),
+(109, 15, 26),
+(110, 15, 28),
+(112, 16, 2),
+(113, 16, 7),
+(114, 16, 10),
+(115, 16, 16),
+(116, 16, 17),
+(111, 16, 23),
+(117, 16, 25),
+(118, 16, 29),
+(96, 17, 2),
+(97, 17, 3),
+(98, 17, 10),
+(99, 17, 14),
+(100, 17, 19),
+(95, 17, 22),
+(101, 17, 25),
+(102, 17, 28);
 
 -- --------------------------------------------------------
 
@@ -145,7 +180,7 @@ CREATE TABLE IF NOT EXISTS `trips` (
   `places` int(11) NOT NULL DEFAULT '20',
   PRIMARY KEY (`id`),
   KEY `lid` (`lid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
 
 --
 -- Dumping data for table `trips`
@@ -195,7 +230,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `number` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `number` (`number`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
 
 --
 -- Dumping data for table `users`
@@ -208,7 +243,12 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `number`) VALUES
 (5, 'Kobe', 'Bryant', 100007),
 (8, 'Sebastian', 'Vettel', 100011),
 (10, 'Michael', 'Schumacher', 100012),
-(11, 'Sabine', 'Lisicki', 100013);
+(11, 'Sabine', 'Lisicki', 100013),
+(12, 'Michael', 'Ballack', 100014),
+(13, 'Katy', 'Perry', 100015),
+(15, 'Kate', 'Upton', 100017),
+(16, 'Felix', 'Baumgartner', 100018),
+(17, 'Usain', 'Bolt', 100019);
 
 --
 -- Constraints for dumped tables
@@ -218,8 +258,8 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `number`) VALUES
 -- Constraints for table `bookings`
 --
 ALTER TABLE `bookings`
-  ADD CONSTRAINT `bookings_ibfk_4` FOREIGN KEY (`tid`) REFERENCES `trips` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `bookings_ibfk_3` FOREIGN KEY (`uid`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+  ADD CONSTRAINT `bookings_ibfk_3` FOREIGN KEY (`uid`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `bookings_ibfk_4` FOREIGN KEY (`tid`) REFERENCES `trips` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `trips`
