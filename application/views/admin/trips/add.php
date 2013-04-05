@@ -16,6 +16,7 @@
       </select>
       <input type="text" name="title" class="input-block-level" placeholder="Title" required maxlength="60">
       <input type="number" name="cost" class="input-block-level" placeholder="Cost" required>
+      <input type="number" name="places" class="input-block-level" placeholder="Places" required>
       <button type="submit" class="btn btn-success btn-large">
       <i class="icon-plus icon-white"></i> Add Trip</button>
     </form>

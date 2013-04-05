@@ -38,7 +38,8 @@ class Admin_Trips_Controller extends Base_Controller {
             'number' => 'required|integer',
             'locationID' => 'required|integer',
             'title' => 'required|max:120',
-            'cost' => 'required|integer'
+            'cost' => 'required|integer',
+            'places' => 'required|integer'
         );
 
         $validation = Validator::make(Input::get(), $rules);
@@ -54,7 +55,7 @@ class Admin_Trips_Controller extends Base_Controller {
         }
 
         Trips::insert(Input::get('number'), Input::get('locationID'), 
-            Input::get('title'), Input::get('cost'));
+            Input::get('title'), Input::get('cost'), Input::get('places'));
 
         return Response::json(array('success' => true));
     }

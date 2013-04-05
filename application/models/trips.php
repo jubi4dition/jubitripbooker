@@ -37,10 +37,10 @@ class Trips {
         return ($trip != null) ? true : false;
     }
 
-    public static function insert($number, $locationID, $title, $cost)
+    public static function insert($number, $locationID, $title, $cost, $places)
     {
         return DB::table('trips')->insert(array(
-            'lid' => $locationID, 'number' => $number, 'title' => $title, 'cost' => $cost));
+            'lid' => $locationID, 'number' => $number, 'title' => $title, 'cost' => $cost, 'places' => $places));
     }
 
     public static function delete($id)
