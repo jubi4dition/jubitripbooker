@@ -34,10 +34,14 @@ class Admin_Trips_Controller extends Base_Controller {
 
     public function post_add()
     {
+        Validator::register('alpha_space', function($attribute, $value) {
+            return preg_match('/^([-a-z0-9_ ])+$/i', $value);
+        });
+
         $rules = array(
             'number' => 'required|integer',
             'locationID' => 'required|integer',
-            'title' => 'required|max:120',
+            'title' => 'required|max:120|alpha_space',
             'cost' => 'required|integer',
             'places' => 'required|integer'
         );
