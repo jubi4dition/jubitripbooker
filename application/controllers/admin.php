@@ -52,5 +52,10 @@ class Admin_Controller extends Base_Controller {
 
         return Redirect::to('admin/login');
     }
+
+    public function action_profile()
+    {
+        return View::make('admin.index');
+    }
        
 }

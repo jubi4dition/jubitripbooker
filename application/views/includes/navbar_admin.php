@@ -11,7 +11,7 @@
         <li class="divider-vertical"></li>
       </ul>
       <div class="pull-right">
-        <small class="navbar-text">User: Admin</small>
+        <small class="navbar-text">User: <?=HTML::link('admin/profile', Session::get('name')); ?></small>
         <a href="<?=URL::to('admin/logout') ?>" class="btn btn-primary"><i class="icon-road icon-white"></i> Logout</a>
       </div>
     </div>
