@@ -136,4 +136,56 @@ class Admin_Trips_Controller extends Base_Controller {
             ->with('status', $status);
     }
 
+    public function get_book($number)
+    {
+        $validation = Validator::make(array('number' => $number), array('number' => 'required|integer'));
+
+        if ($validation->fails()) {
+            return Redirect::to('admin/trips');
+        }
+
+        $trip = Trips::getByNumber($number);
+
+        if ($trip == null) return Redirect::to('admin/trips');
+
+        return View::make('admin/trips.book')
+            ->with('trip', $trip);
+    }
+
+    public function post_book()
+    {
+        $validation = Validator::make(Input::get(), array(
+            'tripID' => 'required|integer', 'number' => 'required|integer'));
+        
+        if ($validation->fails()) {
+            $message = "Invalid input!";
+            return Helper::json(false, $message);
+        }
+
+        $tripID = Input::get('tripID');
+        $user = Users::getByNumber(Input::get('number'));
+
+        if ($user == null) {
+            $message = "User does not exits!";
+            return Helper::json(false, $message);
+        }
+
+        if (Bookings::exists($user->id, $tripID)) {
+            $message = "Already booked!";
+            return Helper::json(false, $message);
+        }
+
+        if (!Bookings::free($tripID)) {
+            $message = "The trip is booked out!";
+            return Helper::json(false, $message);
+        }
+
+        if (Bookings::insert($user->id, $tripID)) {
+            return Response::json(array('success' => true));
+        } else {
+            $message = "Insert failed!";
+            return Response::json(array('success' => false));
+        }
+    }
+
 }

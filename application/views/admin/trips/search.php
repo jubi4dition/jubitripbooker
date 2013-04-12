@@ -17,11 +17,12 @@
   <div class="row">
   <div class="span9 offset2">
     <form class="form-inline">
-    <input id="number" class="span2" type="text">
-    <input id="title" class="span2" type="text">
+    <input id="number" class="span1" type="text">
+    <input id="title" class="span3" type="text">
     <input id="location" class="span2" type="text">
     <a id="status" class="btn btn-info">Status</a>
     <a id="delete" class="btn btn-danger">Delete</a>
+    <a id="book" class="btn btn-success">Book</a>
     </form>
   </div>
   </div>
@@ -34,6 +35,7 @@ $(document).ready(function() {
 
   var urlStatus = "<?=Url::to('admin/trips/status/'); ?>";
   var urlDelete = "<?=Url::to('admin/trips/delete/'); ?>";
+  var urlBook = "<?=Url::to('admin/trips/book/'); ?>";
 
   $('#formSearch').submit(function() {
 
@@ -54,12 +56,14 @@ $(document).ready(function() {
             $('#location').val(json.location);
             $('#status').attr('href', urlStatus + json.number);
             $('#delete').attr('href', urlDelete + json.number);
+            $('#book').attr('href', urlBook + json.number);
         } else {
             $('#number').val('');
             $('#title').val('');
             $('#location').val('');
             $('#status').attr('href', '');
             $('#delete').attr('href', '');
+            $('#book').attr('href', '');
         }
 
         form.children('button').prop('disabled', false);
