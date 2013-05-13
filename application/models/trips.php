@@ -43,9 +43,30 @@ class Trips {
             'lid' => $locationID, 'number' => $number, 'title' => $title, 'cost' => $cost, 'places' => $places));
     }
 
+    public static function insertExt($number, $locationID, $title, $cost, $places)
+    {
+        $id = DB::table('trips')->insert_get_id(array(
+            'lid' => $locationID, 'number' => $number, 'title' => $title, 'cost' => $cost, 'places' => $places));
+
+        return DB::table('trips')->where('id', '=', $id)->first();
+    }
+
     public static function delete($id)
     {
-        return DB::table('trips')->where('id', '=', $id)->delete();
+        return DB::table('trips')
+            ->where('id', '=', $id)
+            ->delete();
+    }
+
+    public static function deleteExt($id)
+    {
+        $trip = DB::table('trips')->where('id', '=', $id)->first();
+
+        DB::table('trips')
+            ->where('id', '=', $id)
+            ->delete();
+
+        return $trip;
     }
 
     public static function count()

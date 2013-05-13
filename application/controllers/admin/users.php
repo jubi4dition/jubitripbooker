@@ -49,9 +49,21 @@ class Admin_Users_Controller extends Base_Controller {
             return Helper::json(false, $message);
         }
 
-        Users::insert(Input::get('firstname'), Input::get('lastname'), Input::get('number'));
+        $user = Users::insertExt(
+            Input::get('firstname'), Input::get('lastname'), Input::get('number'));
+        
+        if ($user == null) {
+            $message = "Insert failed!";
+            return Helper::json(false, $message);
+        }
 
-        return Response::json(array('success' => true));
+        Events::user(
+            0, 
+            $user, 
+            Session::get('name')
+        );
+
+        return Response::json(array('success' => true));     
     }
 
     public function get_search()
@@ -105,7 +117,18 @@ class Admin_Users_Controller extends Base_Controller {
             return Helper::json(false, $message);
         }
 
-        Users::delete(Input::get('userID'));
+        $user = Users::deleteExt(Input::get('userID'));
+
+        if ($user == null) {
+            $message = "Deletion failed!";
+            return Helper::json(false, $message);
+        }
+
+        Events::user(
+            1, 
+            $user, 
+            Session::get('name')
+        );
 
         return Response::json(array('success' => true));
     }

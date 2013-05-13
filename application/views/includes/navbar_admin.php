@@ -9,6 +9,8 @@
         <li class="divider-vertical"></li>
         <li id="nav-trips"><a href="<?=URL::to('admin/trips'); ?>"><i class="icon-briefcase icon-white"></i> Trips</a></li>
         <li class="divider-vertical"></li>
+        <li id="nav-events"><a href="<?=URL::to('admin/events'); ?>"><i class="icon-time icon-white"></i> Events</a></li>
+        <li class="divider-vertical"></li>
       </ul>
       <div class="pull-right">
         <small class="navbar-text">User: <?=HTML::link('admin/profile', Session::get('name')); ?></small>

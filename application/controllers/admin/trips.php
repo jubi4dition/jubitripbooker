@@ -58,8 +58,19 @@ class Admin_Trips_Controller extends Base_Controller {
             return Helper::json(false, $message);
         }
 
-        Trips::insert(Input::get('number'), Input::get('locationID'), 
+        $trip = Trips::insertExt(Input::get('number'), Input::get('locationID'), 
             Input::get('title'), Input::get('cost'), Input::get('places'));
+
+        if ($trip == null) {
+            $message = "Insert failed!";
+            return Helper::json(false, $message);
+        }
+
+        Events::trip(
+            2, 
+            $trip, 
+            Session::get('name')
+        );
 
         return Response::json(array('success' => true));
     }
@@ -115,7 +126,18 @@ class Admin_Trips_Controller extends Base_Controller {
             return Helper::json(false, $message);
         }
 
-        Trips::delete(Input::get('tripID'));
+        $trip = Trips::deleteExt(Input::get('tripID'));
+
+        if ($trip == null) {
+            $message = "Insert failed!";
+            return Helper::json(false, $message);
+        }
+
+        Events::trip(
+            3, 
+            $trip, 
+            Session::get('name')
+        );
 
         return Response::json(array('success' => true));
     }

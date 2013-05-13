@@ -1,11 +1,11 @@
 --
--- Database: `jubitripbooker`
+-- Datenbank: `jubitripbooker`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `administrators`
+-- Tabellenstruktur für Tabelle `administrators`
 --
 
 DROP TABLE IF EXISTS `administrators`;
@@ -14,19 +14,21 @@ CREATE TABLE IF NOT EXISTS `administrators` (
   `name` varchar(64) NOT NULL,
   `password` varchar(64) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 --
--- Dumping data for table `administrators`
+-- Daten für Tabelle `administrators`
 --
 
 INSERT INTO `administrators` (`id`, `name`, `password`) VALUES
-(1, 'admin001', '$2a$08$DspaDN60Q8dRMKL/WUNJDekg/36F0JR7OfkZpKtSIKhrIDe7iybXm');
+(1, 'admin001', '$2a$08$DspaDN60Q8dRMKL/WUNJDekg/36F0JR7OfkZpKtSIKhrIDe7iybXm'),
+(2, 'admin002', '$2a$08$DspaDN60Q8dRMKL/WUNJDekg/36F0JR7OfkZpKtSIKhrIDe7iybXm'),
+(3, 'admin003', '$2a$08$DspaDN60Q8dRMKL/WUNJDekg/36F0JR7OfkZpKtSIKhrIDe7iybXm');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bookings`
+-- Tabellenstruktur für Tabelle `bookings`
 --
 
 DROP TABLE IF EXISTS `bookings`;
@@ -37,10 +39,10 @@ CREATE TABLE IF NOT EXISTS `bookings` (
   PRIMARY KEY (`id`),
   KEY `uid` (`uid`,`tid`),
   KEY `tid` (`tid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=127 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=147 ;
 
 --
--- Dumping data for table `bookings`
+-- Daten für Tabelle `bookings`
 --
 
 INSERT INTO `bookings` (`id`, `uid`, `tid`) VALUES
@@ -60,14 +62,14 @@ INSERT INTO `bookings` (`id`, `uid`, `tid`) VALUES
 (12, 3, 22),
 (18, 3, 25),
 (19, 3, 28),
-(82, 4, 2),
-(29, 4, 8),
-(38, 4, 9),
-(30, 4, 14),
-(39, 4, 19),
-(86, 4, 23),
-(40, 4, 24),
-(83, 4, 28),
+(141, 4, 3),
+(140, 4, 5),
+(142, 4, 12),
+(143, 4, 14),
+(144, 4, 18),
+(139, 4, 23),
+(145, 4, 24),
+(146, 4, 29),
 (43, 5, 1),
 (44, 5, 7),
 (45, 5, 11),
@@ -78,6 +80,7 @@ INSERT INTO `bookings` (`id`, `uid`, `tid`) VALUES
 (49, 5, 28),
 (61, 8, 4),
 (60, 8, 6),
+(134, 8, 7),
 (62, 8, 12),
 (63, 8, 16),
 (64, 8, 17),
@@ -139,7 +142,31 @@ INSERT INTO `bookings` (`id`, `uid`, `tid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `locations`
+-- Tabellenstruktur für Tabelle `events`
+--
+
+DROP TABLE IF EXISTS `events`;
+CREATE TABLE IF NOT EXISTS `events` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` int(11) NOT NULL,
+  `message` varchar(128) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=33 ;
+
+--
+-- Daten für Tabelle `events`
+--
+
+INSERT INTO `events` (`id`, `type`, `message`, `date`) VALUES
+(30, 0, 'The user Victoria Beckham(100021) has been added by admin001!', '2013-05-12 20:17:12'),
+(31, 0, 'The user Tiger Woods(100022) has been added by admin001!', '2013-05-12 20:17:20'),
+(32, 2, 'The trip Boats Tour(129) has been added by admin002!', '2013-05-12 20:18:48');
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `locations`
 --
 
 DROP TABLE IF EXISTS `locations`;
@@ -151,7 +178,7 @@ CREATE TABLE IF NOT EXISTS `locations` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 --
--- Dumping data for table `locations`
+-- Daten für Tabelle `locations`
 --
 
 INSERT INTO `locations` (`id`, `name`, `day`) VALUES
@@ -167,7 +194,7 @@ INSERT INTO `locations` (`id`, `name`, `day`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `trips`
+-- Tabellenstruktur für Tabelle `trips`
 --
 
 DROP TABLE IF EXISTS `trips`;
@@ -180,10 +207,10 @@ CREATE TABLE IF NOT EXISTS `trips` (
   `places` int(11) NOT NULL DEFAULT '20',
   PRIMARY KEY (`id`),
   KEY `lid` (`lid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=32 ;
 
 --
--- Dumping data for table `trips`
+-- Daten für Tabelle `trips`
 --
 
 INSERT INTO `trips` (`id`, `lid`, `number`, `title`, `cost`, `places`) VALUES
@@ -210,16 +237,17 @@ INSERT INTO `trips` (`id`, `lid`, `number`, `title`, `cost`, `places`) VALUES
 (22, 10, 120, 'Sightseeing of the Reeperbahn', 29, 20),
 (23, 10, 121, 'Harbor tour', 39, 20),
 (24, 8, 122, 'Panoramic tour of Cadiz', 39, 20),
-(25, 8, 123, 'Rapid Quad Tour', 69, 20),
+(25, 8, 123, 'Rapid Quad Tour', 69, 6),
 (26, 8, 124, 'The Rock of Gibraltar', 69, 20),
 (27, 8, 125, 'Trekking in the Natural Park of La Brena', 55, 20),
 (28, 9, 126, 'Beach tour', 29, 20),
-(29, 9, 127, 'Sightseeing tour', 49, 20);
+(29, 9, 127, 'Sightseeing tour', 49, 20),
+(31, 9, 129, 'Boats Tour', 40, 25);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Tabellenstruktur für Tabelle `users`
 --
 
 DROP TABLE IF EXISTS `users`;
@@ -230,10 +258,10 @@ CREATE TABLE IF NOT EXISTS `users` (
   `number` int(11) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `number` (`number`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=18 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=25 ;
 
 --
--- Dumping data for table `users`
+-- Daten für Tabelle `users`
 --
 
 INSERT INTO `users` (`id`, `firstname`, `lastname`, `number`) VALUES
@@ -248,21 +276,24 @@ INSERT INTO `users` (`id`, `firstname`, `lastname`, `number`) VALUES
 (13, 'Katy', 'Perry', 100015),
 (15, 'Kate', 'Upton', 100017),
 (16, 'Felix', 'Baumgartner', 100018),
-(17, 'Usain', 'Bolt', 100019);
+(17, 'Usain', 'Bolt', 100019),
+(18, 'Uli', 'Hoeness', 100020),
+(23, 'Victoria', 'Beckham', 100021),
+(24, 'Tiger', 'Woods', 100022);
 
 --
--- Constraints for dumped tables
+-- Constraints der exportierten Tabellen
 --
 
 --
--- Constraints for table `bookings`
+-- Constraints der Tabelle `bookings`
 --
 ALTER TABLE `bookings`
   ADD CONSTRAINT `bookings_ibfk_3` FOREIGN KEY (`uid`) REFERENCES `users` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `bookings_ibfk_4` FOREIGN KEY (`tid`) REFERENCES `trips` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `trips`
+-- Constraints der Tabelle `trips`
 --
 ALTER TABLE `trips`
   ADD CONSTRAINT `trips_ibfk_1` FOREIGN KEY (`lid`) REFERENCES `locations` (`id`) ON UPDATE CASCADE;

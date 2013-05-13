@@ -48,11 +48,30 @@ class Users {
             'firstname' => $firstname, 'lastname' => $lastname, 'number' => $number));
     }
 
+    public static function insertExt($firstname, $lastname, $number)
+    {
+        $id = DB::table('users')->insert_get_id(array(
+            'firstname' => $firstname, 'lastname' => $lastname, 'number' => $number));
+
+        return DB::table('users')->where('id', '=', $id)->first();
+    }
+
     public static function delete($id)
     {
         return DB::table('users')
             ->where('id', '=', $id)
             ->delete();
+    }
+
+    public static function deleteExt($id)
+    {
+        $user = DB::table('users')->where('id', '=', $id)->first();
+
+        DB::table('users')
+            ->where('id', '=', $id)
+            ->delete();
+
+        return $user;
     }
 
     public static function deleteByNumber($number)

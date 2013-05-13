@@ -4,6 +4,7 @@ Route::controller('user');
 Route::controller('login');
 Route::controller('admin.users');
 Route::controller('admin.trips');
+Route::controller('admin.events');
 Route::controller('admin');
 
 Route::get('/', function()

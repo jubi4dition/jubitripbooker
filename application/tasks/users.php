@@ -35,7 +35,16 @@ class Users_Task {
 
     public function test($arguments)
     {
-        $check = Bookings::free(11);
-        echo $check;
+        /*Events::user(1, "testuser", "admin001");
+        Events::user(0, "testuser", "admin001");
+        Events::user(0, "testuser", "admin001");
+        Events::user(1, "testuser", "admin001");*/
+
+        //Events::trip(2, "testtrip", "admin002");
+        //Events::trip(3, "testtrip", "admin002");
+
+        //var_dump(Events::getAll());
+
+        //Events::deleteAll();
     }
 }
